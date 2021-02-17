@@ -1,0 +1,62 @@
+
+
+.menu{
+
+
+    &__logo{
+
+    }
+
+    &__burgger{
+        position: relative;
+        width: 50px;
+        height: 50px;
+
+        &--line{
+            position: absolute;
+            height: 2px;
+            width: 30px;
+            background-color:#333;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            
+        }
+
+        &--line::before,
+        &--line::after{
+            background: #333;
+            content: '';
+            display: block;
+            height: 2px;
+            position: absolute;
+            transition: all .2s ease-out;
+            width: 30px;
+        }
+
+        &--line::before{
+            top: 11px;
+        }
+
+        &--line::after{
+            top: -11px;
+        }
+    }
+
+    &__itemscontainer{
+        position: absolute;
+        right: 50%;
+        top: 95px;
+        z-index: 0;
+    }
+
+    &__items{
+        list-style: none;
+        background-color: rgba(38, 148, 38, 0.267);
+        
+
+        &-item{
+            text-decoration: none;
+        }
+    }
+}

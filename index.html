@@ -4,25 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style/style.css">
     <title>Proyecto gihos 🐱‍👤🐱‍👤</title>
 </head>
 <body>
-    <div class="manu">
-        <nav class="logo"> <img src="/img/logo-mobile.svg" alt="logo-img"></nav>
-        <input id="burger" type="checkbox" />
-        <label for="burger">
-            <span></span>
-        </label>
-        <nav>    
-          <ul>
-            <li><a href="#">Link #1</a></li>
-            <li><a href="#">Link #2</a></li>
-            <li><a href="#">Link #3</a></li>
-          </ul>  
-        </nav>
-    </div>
+    <header class="menu">
+        <div class="menu__logo">
+             <img src="assets/img/logo-mobile.svg" alt="logo-img">
+             <input class="menu__inputBugger" id="burger" type="checkbox" />    
+        </div>
 
-    <main>
+
+        <div class="menu__itemscontainer">
+            <ul class="menu__items" >
+                <li><a class="menu__items-item" href="#">Link #1</a></li>
+                <li><a class="menu__items-item" href="#">Link #2</a></li>
+                <li><a class="menu__items-item" href="#">Link #3</a></li>
+            </ul> 
+        </div>
+        
+        
+        <label class="menu__burgger" for="burger">
+            <span class="menu__burgger--line" ></span>
+        </label>
+        
+    </header>
+
+    
+    <!-- <div>
+        <input class="botonbeta" type="checkbox" name="my-checkbox" id="opt-in">
+        <label class="lasbelbeta" for="opt-in">Check me!</label>
+    </div> -->
+
+
+    <!-- <main>
         <section class="home">
             <div class="home-tiutlo texto1">
                 <h1 class="texto1-home">
@@ -88,6 +104,6 @@
                 aqui va el texto final
             </div>
         </footer>
-    </main>
+    </main> -->
 </body>
 </html>

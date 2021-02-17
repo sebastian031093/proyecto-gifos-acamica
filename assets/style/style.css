@@ -1,0 +1,91 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.menu__burgger {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.menu__burgger--line {
+  position: absolute;
+  height: 2px;
+  width: 30px;
+  background-color: #333;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.menu__burgger--line::before, .menu__burgger--line::after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  width: 30px;
+}
+
+.menu__burgger--line::before {
+  top: 11px;
+}
+
+.menu__burgger--line::after {
+  top: -11px;
+}
+
+.menu__itemscontainer {
+  position: absolute;
+  right: 50%;
+  top: 95px;
+  z-index: 0;
+}
+
+.menu__items {
+  list-style: none;
+  background-color: rgba(38, 148, 38, 0.267);
+}
+
+.menu__items-item {
+  text-decoration: none;
+}
+
+.menu {
+  width: 100vw;
+  height: 9.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: tomato;
+  z-index: 2;
+}
+/*# sourceMappingURL=style.css.map */
