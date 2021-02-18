@@ -2,15 +2,15 @@
 
 .menu{
 
-
     &__logo{
-
+        z-index: 2000;
     }
 
     &__burgger{
         position: relative;
         width: 50px;
         height: 50px;
+        z-index: 2000;
 
         &--line{
             position: absolute;
@@ -46,19 +46,72 @@
 
     //Menu desplegable.
 
+    &__nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1500;
+        width: 0;
+        height: 100vh;
+        padding-top: 10rem;
+        opacity: 0;
+        
+    }
+    //TODO: colocar color de fuente.
+    &__backgroud{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        opacity: 0;
+        width: 100vw;
+        background-color: rgba(135, 206, 250, 0.541);
+        margin-top: 9rem;
+    }
+
+
     &__items{
         list-style: none;
-        background-color: rgba(38, 148, 38, 0.267);
-        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5rem;
         
-
+        //TODO: configurar estilos
         &-item{
-            text-decoration: none;
+            &:link,
+            &:visited{
+                display: inline-block; // Para que funcione la aniamcion del desplazamiento en x
+                font-size: 1.7rem;
+                font-weight: 700;
+                //padding: 1rem 2rem;
+                //color: $color-white;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+            
+            //color: $color-white;
         }
     }
 }
 
+li{
+    padding: 3.5rem 0 3.5rem 0;
+}
+
 //movimientos.
+
+//TODO: poner transition....
+.btn-bugger:checked ~ .menu__nav{
+    opacity: 1;
+    width: 100%;
+}
+//TODO: poner transition....
+.btn-bugger:checked ~ .menu__backgroud{
+    opacity: 1;
+    transform: scale(50);
+}
+
 
 .btn-bugger:checked ~ .menu__burgger .menu__burgger--line{
     background: transparent;

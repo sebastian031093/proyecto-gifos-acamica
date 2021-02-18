@@ -131,10 +131,15 @@ body {
   /* truco para desvamecer algo. */
 }
 
+.menu__logo {
+  z-index: 2000;
+}
+
 .menu__burgger {
   position: relative;
   width: 50px;
   height: 50px;
+  z-index: 2000;
 }
 
 .menu__burgger--line {
@@ -167,14 +172,64 @@ body {
   top: -11px;
 }
 
-.menu__items {
-  list-style: none;
-  background-color: rgba(38, 148, 38, 0.267);
-  z-index: 1;
+.menu__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  width: 0;
+  height: 100vh;
+  padding-top: 10rem;
+  opacity: 0;
 }
 
-.menu__items-item {
+.menu__backgroud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  width: 100vw;
+  background-color: rgba(135, 206, 250, 0.541);
+  margin-top: 9rem;
+}
+
+.menu__items {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+}
+
+.menu__items-item:link, .menu__items-item:visited {
+  display: inline-block;
+  font-size: 1.7rem;
+  font-weight: 700;
   text-decoration: none;
+  text-transform: uppercase;
+}
+
+li {
+  padding: 3.5rem 0 3.5rem 0;
+}
+
+.btn-bugger:checked ~ .menu__nav {
+  opacity: 1;
+  width: 100%;
+}
+
+.btn-bugger:checked ~ .menu__backgroud {
+  opacity: 1;
+  -webkit-transform: scale(50);
+          transform: scale(50);
 }
 
 .btn-bugger:checked ~ .menu__burgger .menu__burgger--line {
@@ -215,7 +270,8 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: tomato;
-  z-index: 2;
+  position: fixed;
+  z-index: 2000;
 }
 
 .elementos {

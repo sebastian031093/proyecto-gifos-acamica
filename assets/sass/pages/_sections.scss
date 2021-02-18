@@ -10,7 +10,8 @@
     align-items: center;
     justify-content: space-between;
     background-color: tomato;
-    z-index: 2;
+    position: fixed;
+    z-index: 2000;
 }
 
 .elementos{
