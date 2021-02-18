@@ -17,6 +17,11 @@ html {
   text-align: center;
 }
 
+.btn-bugger {
+  position: absolute;
+  opacity: 0;
+}
+
 .menu__burgger {
   position: relative;
   width: 50px;
@@ -40,8 +45,8 @@ html {
   display: block;
   height: 2px;
   position: absolute;
-  -webkit-transition: all .2s ease-out;
-  transition: all .2s ease-out;
+  -webkit-transition: all .35s ease-out;
+  transition: all .35s ease-out;
   width: 30px;
 }
 
@@ -53,20 +58,35 @@ html {
   top: -11px;
 }
 
-.menu__itemscontainer {
-  position: absolute;
-  right: 50%;
-  top: 95px;
-  z-index: 0;
-}
-
 .menu__items {
   list-style: none;
   background-color: rgba(38, 148, 38, 0.267);
+  z-index: 1;
 }
 
 .menu__items-item {
   text-decoration: none;
+}
+
+.btn-bugger:checked ~ .menu__burgger .menu__burgger--line {
+  background: transparent;
+}
+
+.btn-bugger:checked ~ .menu__burgger .menu__burgger--line::before {
+  opacity: 1;
+  -webkit-transform: rotate(405deg);
+          transform: rotate(405deg);
+}
+
+.btn-bugger:checked ~ .menu__burgger .menu__burgger--line::after {
+  opacity: 1;
+  -webkit-transform: rotate(-405deg);
+          transform: rotate(-405deg);
+}
+
+.btn-bugger:checked ~ .menu__burgger:not(steps) .menu__burgger--line::before,
+.btn-bugger:checked ~ .menu__burgger:not(steps) .menu__burgger--line::after {
+  top: 0;
 }
 
 .menu {

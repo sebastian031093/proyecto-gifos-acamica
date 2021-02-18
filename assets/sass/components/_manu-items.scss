@@ -30,7 +30,7 @@
             display: block;
             height: 2px;
             position: absolute;
-            transition: all .2s ease-out;
+            transition: all .35s ease-out;
             width: 30px;
         }
 
@@ -43,16 +43,13 @@
         }
     }
 
-    &__itemscontainer{
-        position: absolute;
-        right: 50%;
-        top: 95px;
-        z-index: 0;
-    }
+
+    //Menu desplegable.
 
     &__items{
         list-style: none;
         background-color: rgba(38, 148, 38, 0.267);
+        z-index: 1;
         
 
         &-item{
@@ -60,3 +57,29 @@
         }
     }
 }
+
+//movimientos.
+
+.btn-bugger:checked ~ .menu__burgger .menu__burgger--line{
+    background: transparent;
+
+}
+
+.btn-bugger:checked ~ .menu__burgger .menu__burgger--line::before{
+    opacity: 1;
+    transform: rotate(405deg);
+
+}
+
+.btn-bugger:checked ~ .menu__burgger .menu__burgger--line::after{
+    opacity: 1;
+    transform: rotate(-405deg);
+}
+
+.btn-bugger:checked ~ .menu__burgger:not(steps) .menu__burgger--line::before,
+.btn-bugger:checked ~ .menu__burgger:not(steps) .menu__burgger--line::after{
+    top: 0;
+}
+
+
+
