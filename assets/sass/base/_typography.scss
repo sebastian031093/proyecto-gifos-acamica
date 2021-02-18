@@ -4,3 +4,22 @@
 
 // font-family: 'Montserrat', sans-serif;
 // font-family: 'Roboto', sans-serif;
+
+body{
+    font-family: 'Montserrat', sans-serif ;
+    font-weight: 400;
+}
+
+.tipografiaMovileTitulo{
+    font-size: 2.5rem;
+    color: $color-primario;
+    //line-height: 3.3rem agregar a la etiqueta del texto 
+}
+
+.tituloBuscador{
+    font-family:'Roboto', sans-serif ;
+    font-size: 1.6rem;
+    color: $color-grey-light-3;
+    //line-height: 1.9rem agregar a la etiqueta del texto 
+    //font-weight: 300;
+}
