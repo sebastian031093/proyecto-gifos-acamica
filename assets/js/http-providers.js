@@ -21,17 +21,24 @@
 
 const URL = "https://api.giphy.com/v1/gifs/";
 const key = "xMB8GGSNCJYtHDpFSjiPNSFt6SneTN2V";
+const search = "q="
 const limite = "limit=";
-const offset = "offset=";
+const paso = "offset=";
 const rating = "rating=g";
 const language = "lang=en";
 
 /**
- * Esta funcion es llamada para traer la info de giphy
- * @param {endpoint} typesearch string
- * @param {limite} limit number
- * @param {paso} offset number
+ * esta funcion trae las informacion de la api giphy
+ * @param {'search'} typesearch string
+ * @param {'homero'} busqueda string
+ * @param {25} limit number
+ * @param {0} offset number
+ * @param {?} autocompletado string
  */
-const fecthData = (typesearch,limit,offset) =>{
+export const fecthData = async (typesearch,busqueda,limit,offset,autocompletado) =>{
 
+    const resp = await fetch(`${URL}${typesearch}?api_key=${key}&${search}${busqueda}&${limite}${limit}&${paso}${offset}&${rating}&${language}`);
+    const data = await resp.json()
+
+    console.log(data);
 }

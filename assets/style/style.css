@@ -155,6 +155,50 @@ body {
   background-color: #FFFFFF;
 }
 
+.sectionfooter {
+  margin-top: 25%;
+}
+
+.sectionfooter__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sectionfooter__sub1 {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.sectionfooter__redes {
+  width: 100%;
+  text-align: center;
+  height: 8vh;
+}
+
+.sectionfooter__sub2 {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.iconredes {
+  margin: 0 8% 0 0;
+  padding: 4% 0 4% 0%;
+  width: 1%;
+  height: 1%;
+  font-size: 19px;
+  color: #6B7989;
+}
+
 .home__tiutlo--wrapper {
   margin: 0px 8% 6% 8%;
   text-align: center;
@@ -192,6 +236,7 @@ body {
 
 .home__buscador--icons {
   position: absolute;
+  width: 80%;
   top: 20px;
   left: 40px;
 }
@@ -236,7 +281,14 @@ body {
 
 .lupita {
   position: absolute;
-  left: 26rem;
+  left: 86%;
+  z-index: 1;
+}
+
+.lupita1 {
+  position: absolute;
+  left: 93%;
+  z-index: 1;
 }
 
 .menu__logo {
@@ -375,6 +427,41 @@ body {
 .btn-bugger:checked ~ .menu__burgger:not(steps) .menu__burgger--line::before,
 .btn-bugger:checked ~ .menu__burgger:not(steps) .menu__burgger--line::after {
   top: 0;
+}
+
+.trendings {
+  height: 90vh;
+  background-color: #F3F5F8;
+  text-align: center;
+}
+
+.trendings__titulo {
+  font-size: 20px;
+  color: #572EE5;
+  padding-top: 16%;
+}
+
+.trendings__subtitulo {
+  font-size: 16px;
+  line-height: 23px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.trendings__scrolling--wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.trendings__scrolling--wrapper-card {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  margin: 10% 8% 0 8%;
 }
 
 .layout {

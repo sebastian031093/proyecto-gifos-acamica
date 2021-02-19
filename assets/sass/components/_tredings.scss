@@ -1,0 +1,45 @@
+
+
+
+
+.trendings{
+    height: 90vh;
+    background-color:$color-light-grey;
+    text-align: center;
+    
+
+    &__titulo{
+        font-size: 20px;
+        color: $color-primario;
+        padding-top: 16%;
+    }
+
+    &__subtitulo{
+        font-size: 16px;
+        line-height: 23px;
+        font-family:'Roboto', sans-serif ;
+        font-weight: 400;
+    }
+
+    &__scrolling--wrapper{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
+        &-card{
+            flex: 0 0 auto;
+            margin: 10% 8% 0 8%;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

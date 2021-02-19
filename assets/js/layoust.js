@@ -1,1 +1,19 @@
-//tempaltes de elemento html desde javascript
+//tempaltes de elemento html desde javascript.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
