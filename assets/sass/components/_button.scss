@@ -5,6 +5,7 @@
 }
 
 .btn{
+    border: 1px solid $color-primario;
     &:link,
     &:visited{
         text-transform: uppercase;
@@ -61,4 +62,11 @@
         transform: scaleX(1.4) scaleY(1.6);
         opacity: 0; /* truco para desvamecer algo. */
     }
+}
+
+
+.botton{
+    border: none;
+    background-color: $color-white;
+
 }

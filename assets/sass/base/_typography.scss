@@ -23,3 +23,18 @@ body{
     //line-height: 1.9rem agregar a la etiqueta del texto 
     //font-weight: 300;
 }
+
+.subtitulosfuerte{
+    font-family: 'Montserrat', sans-serif ;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+    color: $color-primario;
+}
+
+.subtitulos{
+    font-family: 'Montserrat', sans-serif ;
+    font-weight: 300;
+    font-size: 14px;
+    color: $color-primario;
+}

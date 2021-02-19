@@ -13,6 +13,7 @@
 //Search Suggestions
 //api.giphy.com/v1/tags/related?api_key=xMB8GGSNCJYtHDpFSjiPNSFt6SneTN2V&{term}
 
+//parametros de la funcion 
 //tipo de endpoint: search,treadings,autocomlete,suggets
 //limite
 //offset
@@ -20,5 +21,17 @@
 
 const URL = "https://api.giphy.com/v1/gifs/";
 const key = "xMB8GGSNCJYtHDpFSjiPNSFt6SneTN2V";
+const limite = "limit=";
+const offset = "offset=";
 const rating = "rating=g";
 const language = "lang=en";
+
+/**
+ * Esta funcion es llamada para traer la info de giphy
+ * @param {endpoint} typesearch string
+ * @param {limite} limit number
+ * @param {paso} offset number
+ */
+const fecthData = (typesearch,limit,offset) =>{
+
+}

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/add37e3a0f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/style/style.css">
     <title>Proyecto gihos 🐱‍👤🐱‍👤</title>
 </head>
@@ -22,41 +23,116 @@
         <div class="menu__backgroud">&nbsp;</div>
         <div class="menu__nav">
             <ul class="menu__items" >
-                <li><a class="menu__items-item" href="#">Link #1</a></li>
-                <li><a class="menu__items-item" href="#">Link #2</a></li>
-                <li><a class="menu__items-item" href="#">Link #3</a></li>
+                <li class="list-menu" ><a class="menu__items-item" href="#">Modo Nocturno</a></li>
+                <li class="list-menu" ><a class="menu__items-item" href="#">Favoritos</a></li>
+                <li class="list-menu" ><a class="menu__items-item" href="#">Mis gifos</a></li>
             </ul> 
         </div>
-    
-        
-        
-        
     </header>
 
-    
-    <div>
-        <input class="botonbeta" type="checkbox" name="my-checkbox" id="opt-in">
-        <label class="lasbelbeta" for="opt-in">Check me!</label>
-        
-    </div>
+    <main>  
+        <section class="home">
+            <div class="home__tiutlo">
+                <div class="home__tiutlo--wrapper">
+                    <h1 class="home__titutlo--texto1 tipografiaMovileTitulo">
+                        Inspírate, busca, guarda, y crea los mejores <span class="home__tiutlo--texto1-span">GIFOS</span>
+                    </h1>
+                </div>
 
-    <div class="elementos">
-        <a href="#" class="btn btn--white btn--animated">Ver más</a>
-        <div class="titulo tipografiaMovileTitulo">
-            <h1>Soy un hermoso titulo</h1>
-        </div>
+                <div class="home__img">
+                    <img src="/assets/img/ilustra_header.svg" alt="imagen principal" class="home__img--picture">
+                </div>
 
-        <div class="titulobuscador tituloBuscador">
-            <h2>soy el titulo del buscador</h2>
-        </div>
+                <!-- TODO:APLICAR ESTILOS A BUSCADOR PARA QUE SE CONTRAIGA  -->
+                <div class="home__buscador">
+                    <div class="home__searchinput">
+                        <input type="text" placeholder="Busca GIFOS y más" class="home__searchinput--box tituloBuscador">
+                        <div class="home__buscador--atocom-box">
+                            <li>busqueda 1 <i class="fas fa-search lupita"></i></li>
+                            <li>busqueda 1 <i class="fas fa-search lupita"></i></li>
+                            <li>busqueda 1 <i class="fas fa-search lupita"></i></li>
+                            <li>busqueda 1 <i class="fas fa-search lupita"></i></li>
+                            <li>busqueda 1 <i class="fas fa-search lupita"></i></li>
+                        </div>
+                        <div class="home__buscador--icons">
+                            <i class="fas fa-times equis"></i>
+                            <i class="fas fa-search lupita"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home__subtreadings">
+                <h2 class="subtitulosfuerte">Trending:</h2>
+                <h3 class="subtitulos">
+                    Reactions, Entertainment, Sports, Stickers, Artists
+                </h3>
+            </div>
+            <div class="home__cajaDeBusqeudas">
+                <h2 class="home__cajaDeBusqeudas--texto2">
+                    Mascotas
+                </h2>
+                <div class="layout">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                </div>
+                <div class="layout__btn" class="home__cajaDeBusqeudas--button" >
+                    <a class="btn btn-purple" href="#">Ver mas....</a>
+                </div>
+            </div>
+        </section>
 
-        <div>
-            
-            <button><img src="/assets/img/button-crear-gifo.svg" alt=""></button>
-        </div>
+        <section class="trendings">
+            <h2>Subtitulo</h2>
+            <div>
+                <h3>
+                    texto del subtitulo
+                </h3>
+            </div>
+            <div class="scrolling-wrapper">
+                <div class="card">
+                    <img src="https://picsum.photos/200/300" alt="img trendings">
+                </div class="card">
+                <div class="card">
+                    <img src="https://picsum.photos/200/300" alt="img trendings">
+                </div class="card">
+                <div class="card">
+                    <img src="https://picsum.photos/200/300" alt="img trendings">
+                </div class="card">
+                <div class="card">
+                    <img src="https://picsum.photos/200/300" alt="img trendings">
+                </div class="card">
+                <div class="card">
+                    <img src="https://picsum.photos/200/300" alt="img trendings">
+                </div>
 
-        
-    </div>
+            </div>
+        </section>
+        <footer class="sectionfooter">
+            <div>
+                <h2>
+                    Compartir en:
+                </h2>
+                <div class="redes">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                </div>
+                <h3>
+                    © GIFOS 2020 All Rights Reserved.
+                </h3>
+            </div>
+        </footer>
+    </main>
 
 
     <!-- <main>
