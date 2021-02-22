@@ -29,16 +29,28 @@ const language = "lang=en";
 
 /**
  * esta funcion trae las informacion de la api giphy
- * @param {'search'} typesearch string
- * @param {'homero'} busqueda string
- * @param {25} limit number
- * @param {0} offset number
- * @param {?} autocompletado string
+ * @param {'string'} typesearch tipo de endpoint que se va a consultar
+ * @param {'string'} busqueda valor de la busqueda a realizar
+ * @param {number} limit numero de busquedas a hacer
+ * @param {number} offset paso de la busqueda
+ * @param {string} autocompletado ???
  */
 export const fecthData = async (typesearch,busqueda,limit,offset,autocompletado) =>{
 
-    const resp = await fetch(`${URL}${typesearch}?api_key=${key}&${search}${busqueda}&${limite}${limit}&${paso}${offset}&${rating}&${language}`);
-    const data = await resp.json()
+    try {
+        const resp = await fetch(`${URL}${typesearch}?api_key=${key}&${search}${busqueda}&${limite}${limit}&${paso}${offset}&${rating}&${language}`);
 
-    console.log(data);
+        if(!resp.ok && resp.status != 200){
+            throw "No se pudo realizar la peticion";
+            //TODO:AQUI PUEDES PONER EL MANEJO DEL ERROR (OSEA EL TEMPALTE DEL ERROR)
+        }
+
+        const {data} = await resp.json();
+
+        return data
+
+
+    } catch (error) {
+        throw(error)
+    }
 }

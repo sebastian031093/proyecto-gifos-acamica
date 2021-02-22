@@ -15,6 +15,8 @@
                 color: $color-secundario;
             }
         }
+
+        
     }
 
     &__img{
@@ -25,34 +27,21 @@
         }
 
     }
+    //barra de busqueda
 
-    &__buscador{
+    &__searchbox{
         display: flex;
         flex-direction: column;
+        margin: 0 0 0 5%;
+        width: 88vw;
+        z-index: 1;
         position: relative;
-        z-index: 0;
-
-        &--icons{
-            position: absolute;
-            width: 80%;
-            top: 20px;
-            left: 40px;
-        }
     }
 
-    &__searchinput{
-        background-color: green;
-        margin: 0 5% 0 5%;
 
-        &--box{
-            width: 100%;
-            height: 5rem;
-            border-radius: 2.7rem;
-            padding: 0 0 0 17%;
-        }
-        
-    }
 
+
+    //trendings
     &__subtreadings{
         height: 12rem;
         display: flex;
@@ -74,4 +63,11 @@
     }
 
 }
+
+
+
+
+
+
+
 

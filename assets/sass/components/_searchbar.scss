@@ -1,0 +1,52 @@
+
+
+
+
+.searchbox{
+
+    &__input{
+
+        height: 5rem;
+        border: 1px solid $color-primario;
+        padding: 0 0 0 12%;
+        border-radius: 3rem;
+    }
+
+    &__backgroud{
+
+
+    }
+
+    &__items{
+        list-style: none;
+
+    }
+
+    &__item{
+        padding: 2% 0 0 10%;
+
+    }
+
+}
+
+
+.btnsearch{
+    position: absolute;
+    padding: 0% 2% 2% 2%;
+    right: 2rem;
+    top: 1.5rem;
+    font-size: 2rem;
+    color: $color-primario;
+}
+
+.btnclose{
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+}
+
+
+
+
+
+

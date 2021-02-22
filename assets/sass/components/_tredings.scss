@@ -20,7 +20,7 @@
         font-family:'Roboto', sans-serif ;
         font-weight: 400;
     }
-
+    //TODO:AGREGAR EFECTO DE COLOR PURPUTA Y TRANCICION.
     &__scrolling--wrapper{
         display: flex;
         flex-wrap: nowrap;
@@ -29,9 +29,37 @@
         &-card{
             flex: 0 0 auto;
             margin: 10% 8% 0 8%;
+            position: relative;
         }
+
+        &-icons{
+            position: absolute;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        &-titulos{
+            position: absolute;
+            left: 0;
+            top: 230px;
+            opacity: 0;
+        }
+
+        &-card:hover &-icons{
+            opacity: 1;
+        }
+
+        &-card:hover &-titulos{
+            opacity: 1;
+        }
+
     }
+
+    
 }
+
+
 
 
 
