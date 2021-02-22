@@ -1,4 +1,4 @@
-import { fecthData } from "../js/http-providers.js"
+import { fecthData,fecthDataSubggest } from "../js/http-providers.js"
 import { pintarCards,pintarpopups } from "../js/layoust.js";
 
 
@@ -20,13 +20,30 @@ const cardstreandigs = async () =>{
     });
 
     // return arrcards;
-
     pintarCards(arrcards);
     pintarpopups(arrcards);
-    
-    
+      
+}
+
+const sugerenciasDeBusqueda = async (value) =>{
+
+  let arrSugerencias=[]
+
+  let data = await fecthDataSubggest("related/",`${value}`,5);
+  
+  data.forEach(element => {
+    let subggets = {
+      sugget:element.name
+    }
+    arrSugerencias.push(subggets)
+  });
+  return arrSugerencias;
 }
 
 
+export { 
+  
+  cardstreandigs,
+  sugerenciasDeBusqueda
 
-export { cardstreandigs };
+};

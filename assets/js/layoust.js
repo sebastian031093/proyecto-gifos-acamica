@@ -46,6 +46,19 @@ const pintarpopups = (arrcards) =>{
 
 }
 
+const searchbox = document.querySelector(".searchbox__items");
+const pintarSugerencias = (arrSuggest) => {
+    let listaData;
+
+    if (arrSuggest.length > 0 ) {
+        listaData = arrSuggest.join('');
+    }else{
+        listaData = ''
+    }
+
+    searchbox.innerHTML = listaData;
+}
+
 
 
 
@@ -60,7 +73,8 @@ const pintarpopups = (arrcards) =>{
 
 export{
     pintarCards,
-    pintarpopups
+    pintarpopups,
+    pintarSugerencias
 }
 
 

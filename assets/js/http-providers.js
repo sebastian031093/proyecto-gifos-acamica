@@ -20,6 +20,7 @@
 
 
 const URL = "https://api.giphy.com/v1/gifs/";
+const URL2 = "https://api.giphy.com/v1/tags/";
 const key = "xMB8GGSNCJYtHDpFSjiPNSFt6SneTN2V";
 const search = "q="
 const limite = "limit=";
@@ -29,16 +30,18 @@ const language = "lang=en";
 
 /**
  * esta funcion trae las informacion de la api giphy
- * @param {'string'} typesearch tipo de endpoint que se va a consultar
- * @param {'string'} busqueda valor de la busqueda a realizar
- * @param {number} limit numero de busquedas a hacer
- * @param {number} offset paso de la busqueda
- * @param {string} autocompletado ???
+ * @param {String} typesearch tipo de endpoint que se va a consultar
+ * @param {String} busqueda valor de la busqueda a realizar
+ * @param {Number} limit numero de busquedas a hacer
+ * @param {Number} offset paso de la busqueda
+ * @param {String} autocompletado ???
  */
-export const fecthData = async (typesearch,busqueda,limit,offset,autocompletado) =>{
+export const fecthData = async (typesearch,busqueda,limit,offset) =>{
 
     try {
-        const resp = await fetch(`${URL}${typesearch}?api_key=${key}&${search}${busqueda}&${limite}${limit}&${paso}${offset}&${rating}&${language}`);
+        const resp = await fetch(
+          `${URL}${typesearch}?api_key=${key}&${search}${busqueda}&${limite}${limit}&${paso}${offset}&${rating}&${language}`
+        );
 
         if(!resp.ok && resp.status != 200){
             throw "No se pudo realizar la peticion";
@@ -53,4 +56,36 @@ export const fecthData = async (typesearch,busqueda,limit,offset,autocompletado)
     } catch (error) {
         throw(error)
     }
+}
+
+
+/**
+ * Esta funcion trae las sugerencias para la barra de busqueda 
+ * @param {String} typesearch tipo de endpoint que se va a consultar
+ * @param {Strins} valuetype Valor que llega por el usuario en la barra de busqueda
+ * @param {Number} limit limite de sugerencias a traer
+ */
+
+export const fecthDataSubggest = async (typesearch,valuetype,limit) =>{
+
+    try {
+
+        const resp = await fetch(
+          `${URL2}${typesearch}${valuetype}?api_key=${key}&${limite}${limit}`
+        );
+
+        if(!resp.ok && resp.status != 200){
+            throw "No se pudo realizar la peticion";
+            //TODO:AQUI PUEDES PONER EL MANEJO DEL ERROR (OSEA EL TEMPALTE DEL ERROR)
+        }
+
+        const {data} =await resp.json();
+
+        return data
+        
+    } catch (error) {
+        
+    }
+
+
 }

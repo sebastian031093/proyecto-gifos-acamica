@@ -1,7 +1,4 @@
 
-
-
-
 .searchbox{
 
     &__input{
@@ -19,12 +16,25 @@
 
     &__items{
         list-style: none;
-
+        max-height: 12rem;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
     }
+
 
     &__item{
         padding: 2% 0 0 10%;
+        width: 100%;
+        cursor: default;
+        border-radius: .3rem;
+        display: none;
+    }
 
+    
+
+    &__item:hover{
+        background: #efefef;
     }
 
 }
@@ -43,6 +53,21 @@
     position: absolute;
     left: 2rem;
     top: 2rem;
+}
+
+
+
+//CARD search 
+
+
+.home__searchbox.active .searchbox__items{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.home__searchbox.active .searchbox__item{
+    display: block;
 }
 
 

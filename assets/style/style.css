@@ -252,6 +252,7 @@ body {
 
 .home__cajaDeBusqeudas {
   margin-top: 20%;
+  margin-bottom: 20%;
 }
 
 .home__cajaDeBusqeudas--texto2 {
@@ -483,10 +484,22 @@ body {
 
 .searchbox__items {
   list-style: none;
+  max-height: 12rem;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .searchbox__item {
   padding: 2% 0 0 10%;
+  width: 100%;
+  cursor: default;
+  border-radius: .3rem;
+  display: none;
+}
+
+.searchbox__item:hover {
+  background: #efefef;
 }
 
 .btnsearch {
@@ -502,6 +515,15 @@ body {
   position: absolute;
   left: 2rem;
   top: 2rem;
+}
+
+.home__searchbox.active .searchbox__items {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.home__searchbox.active .searchbox__item {
+  display: block;
 }
 
 .trendings {
@@ -588,7 +610,33 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 50%;
+  margin-bottom: 20%;
+}
+
+.layout__card {
+  position: relative;
+}
+
+.layout__card--icons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.layout__card--titulos {
+  position: absolute;
+  top: 9rem;
+  left: 0;
+  opacity: 0;
+}
+
+.layout__card:hover .layout__card--icons {
+  opacity: 1;
+}
+
+.layout__card:hover .layout__card--titulos {
+  opacity: 1;
 }
 
 .menu {

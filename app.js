@@ -1,16 +1,16 @@
 
+import { cardstreandigs} from "./assets/classes/card.class.js";
+import { init } from "./assets/js/eventos.js";
 
 
-// cards().then((arreglo) =>{
-//   console.log(arreglo)
-//    arreglo
-// });
-
-import { cardstreandigs } from "./assets/classes/card.class.js";
 
 cardstreandigs().then((info) =>{
   
-})
+});
+
+
+init();
+
 
 
 

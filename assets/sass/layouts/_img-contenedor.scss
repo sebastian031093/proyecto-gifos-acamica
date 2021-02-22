@@ -17,6 +17,35 @@
     &__btn{
         display: flex;
         justify-content: center;
-        margin-bottom: 50%;
+        margin-bottom: 20%;
+    }
+
+    //Estilos de la card de la parte de busqueda.
+
+    &__card{
+        position: relative;
+
+
+        &--icons{
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0;
+        }
+
+        &--titulos{
+            position: absolute;
+            top: 9rem;
+            left: 0;
+            opacity: 0;
+        }
+    }
+
+    &__card:hover &__card--icons{
+        opacity: 1;
+    }
+
+    &__card:hover &__card--titulos{
+        opacity: 1;
     }
 }

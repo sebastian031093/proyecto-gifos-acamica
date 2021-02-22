@@ -73,7 +73,28 @@
                 <h2 class="home__cajaDeBusqeudas--texto2">
                     Mascotas
                 </h2>
+
+                <!-- FIXME:La grilla se esta desbondando al pasar los 24 elementos. -->
                 <div class="layout">
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <img src="/assets/img/icon-fav.svg" alt="" class="icon-fav">
+                            <img src="/assets/img/icon-download.svg" alt="icon-download">
+                            <a href="#popup" class="ancla"><img src="/assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
+                    </div>
+
                     <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
                     <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
                     <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
@@ -86,11 +107,23 @@
                     <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
                     <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
                     <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    
-                </div>
-                <div class="layout__btn" class="home__cajaDeBusqeudas--button" >
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
+                       
+                </div> 
+            </div>
+            <div class="layout__btn" class="home__cajaDeBusqeudas--button" >
                     <a class="btn btn-purple" href="#">Ver mas....</a>
-                </div>
             </div>
         </section>
 
@@ -156,7 +189,7 @@
 
         <!-- //TODO: ID Y SRC del popup y la img del tranding deben se riguales -->
 
-        <!-- <div class="popup" id="popup">
+        <div class="popup" id="popup">
             <div class="popup__content">
                 <a href="#menu" class="popup__close">&times;</a>
                 <div class="popup__content--imgcontainer">
@@ -173,7 +206,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div> 
     </main>
 
     <template id="template-card">
