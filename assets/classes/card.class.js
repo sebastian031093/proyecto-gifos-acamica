@@ -40,10 +40,33 @@ const sugerenciasDeBusqueda = async (value) =>{
   return arrSugerencias;
 }
 
+const busquedas = async (value) => {
+  let arrcards = [];
+
+  let arrcardsfecht = await fecthData("search",`${value}`, 12, 0, "");
+
+  arrcardsfecht.forEach((element) => {
+    let card = {
+      id: element.id,
+      titulo: element.title,
+      nombreusuario: element.username,
+      imagen: element.images.original.url,
+    };
+
+    arrcards.push(card);
+  });
+
+  return arrcards
+};
+
+
+
+
 
 export { 
   
   cardstreandigs,
-  sugerenciasDeBusqueda
+  sugerenciasDeBusqueda,
+  busquedas
 
 };

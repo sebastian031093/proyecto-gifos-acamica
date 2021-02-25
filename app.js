@@ -1,6 +1,6 @@
 
 import { cardstreandigs} from "./assets/classes/card.class.js";
-import { init } from "./assets/js/eventos.js";
+import { init} from "./assets/js/eventos.js";
 
 
 
@@ -8,8 +8,8 @@ cardstreandigs().then((info) =>{
   
 });
 
-
 init();
+
 
 
 

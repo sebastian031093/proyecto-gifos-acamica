@@ -69,13 +69,17 @@
                     Reactions, Entertainment, Sports, Stickers, Artists
                 </h3>
             </div>
+
+            <!-- template de las busquedas -->
             <div class="home__cajaDeBusqeudas">
+                <!-- primer elemnto -->
                 <h2 class="home__cajaDeBusqeudas--texto2">
                     Mascotas
                 </h2>
 
-                <!-- FIXME:La grilla se esta desbondando al pasar los 24 elementos. -->
+                FIXME:La grilla se esta desbondando al pasar los 24 elementos.
                 <div class="layout">
+                    <!-- segundo elemnto -->
                     <div class="layout__card">
                         <div class="layout__card--containerimg">
                             <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
@@ -94,34 +98,10 @@
                             </h3>
                         </div>
                     </div>
-
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                    <img class="layout__img" src="https://picsum.photos/200/300" alt="img-de-muestra">
-                       
+                    
                 </div> 
             </div>
+            <!-- ultimo elemnto -->
             <div class="layout__btn" class="home__cajaDeBusqeudas--button" >
                     <a class="btn btn-purple" href="#">Ver mas....</a>
             </div>
@@ -209,6 +189,8 @@
         </div> 
     </main>
 
+    <!-- template para trendings -->
+
     <template id="template-card">
         <div class="trendings__scrolling--wrapper-card">
             <div class="trendings__scrolling--wrapper-containerimg">
@@ -248,6 +230,42 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </template>
+
+
+    <!-- template para busquedas del navegador de gifos -->
+
+    <template id="template-titulo-busqueda">
+        <h2 class="home__cajaDeBusqeudas--texto2">
+            Mascotas
+        </h2>
+    </template>
+
+    <template id="imagenes-busqueda">
+        <div class="layout__card">
+            <div class="layout__card--containerimg">
+                <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+            </div>
+            <div class="layout__card--icons">
+                <img src="/assets/img/icon-fav.svg" alt="" class="icon-fav">
+                <img src="/assets/img/icon-download.svg" alt="icon-download">
+                <a href="#popup" class="ancla2"><img src="/assets/img/icon-max-normal.svg" alt="icon-max"></a>
+            </div>
+            <div class="layout__card--titulos">
+                <h2 class="layoutsub1">
+                    User
+                </h2>
+                <h3 class="layoutsub2">
+                    Ticulo del gifo
+                </h3>
+            </div>
+        </div>
+    </template>
+
+    <template id="btn-busqueda">
+        <div class="layout__btn" class="home__cajaDeBusqeudas--button" >
+            <a class="btn btn-purple" href="#">Ver mas....</a>
         </div>
     </template>
 

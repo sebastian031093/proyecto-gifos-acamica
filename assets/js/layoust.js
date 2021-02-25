@@ -1,7 +1,5 @@
 //tempaltes de elemento html desde javascript.
 
-
-
 const pintarCards = (arrcards) => {
     // console.log(arrcards);
 
@@ -9,13 +7,13 @@ const pintarCards = (arrcards) => {
     //     console.log(element.id);
     // });
 
-    const divwrapper = document.querySelector('.trendings__scrolling--wrapper'); 
+    const divwrapper = document.querySelector('.trendings__scrolling--wrapper'); //DONDE VA IR NUESTRO TEMPLATE
     
     arrcards.forEach((element) => {
 
-        const tempaltecard = document.querySelector("#template-card").content;
-        const clone = tempaltecard.cloneNode(true); //es todo el template clonado
-        const fragment = document.createDocumentFragment();
+        const tempaltecard = document.querySelector("#template-card").content; //CAPTURAMOS NUESTRO TEMPLATE
+        const clone = tempaltecard.cloneNode(true); //es todo el template clonado, EN LOS LOOPS NO MANIPULAMOS DIRECTAMENTE ESTE TEMPLATE, SINO QUE LO CLONAMOS
+        const fragment = document.createDocumentFragment(); //sumamente efectivo para crear loops, evita el reflow(RENDERISADOS INECESARIOS)
         clone.querySelector(".containerimg__img").setAttribute('src', element.imagen);
         clone.querySelector(".ancla").setAttribute("href",`#${element.id}`);
         clone.querySelector(".sub1").textContent = `${element.nombreusuario}`;
@@ -35,6 +33,7 @@ const pintarpopups = (arrcards) =>{
         const templatepopup = document.querySelector("#template-popup").content;
         const clone = templatepopup.cloneNode(true);
         const fragment = document.createDocumentFragment();
+        //las partes del clone del fragment que vamos a modificar.
         clone.querySelector(".popup__content--imgcontainer-img").setAttribute('src', element.imagen);
         clone.querySelector(".popup").setAttribute("id",`${element.id}`);
         clone.querySelector(".popup__element--titulos-titulo").textContent = `${element.nombreusuario}`;
@@ -58,16 +57,6 @@ const pintarSugerencias = (arrSuggest) => {
 
     searchbox.innerHTML = listaData;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
