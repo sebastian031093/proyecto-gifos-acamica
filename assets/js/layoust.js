@@ -52,10 +52,68 @@ const pintarSugerencias = (arrSuggest) => {
     if (arrSuggest.length > 0 ) {
         listaData = arrSuggest.join('');
     }else{
-        listaData = ''
+        listaData = '';
     }
 
     searchbox.innerHTML = listaData;
+}
+
+
+const divpadre = document.querySelector(".home__cajaDeBusqeudas");
+
+const gifosSeccion = (arr) =>{
+    let elementos = [];
+    // debugger
+    arr.forEach(element => {
+        let elemento = `
+            <div class="layout__card">
+                <div class="layout__card--containerimg">
+                    <img src=${element.imagen} alt="img trendings" class="layout__img">
+                </div>
+                <div class="layout__card--icons">
+                    <img src="/assets/img/icon-fav.svg" alt="" class="icon-fav">
+                    <img src="/assets/img/icon-download.svg" alt="icon-download">
+                    <a href=#${element.id} class="ancla"><img src="/assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                </div>
+                <div class="layout__card--titulos">
+                    <h2 class="layoutsub1">
+                        ${element.nombreusuario}
+                    </h2>
+                    <h3 class="layoutsub2">
+                        ${element.titulo}
+                    </h3>
+                </div>
+            </div>
+        `;
+        elementos.push(elemento)
+    });
+
+    let templateimg = '';
+    for (let index = 0; index < elementos.length; index++) {
+        templateimg += elementos[index];
+    }
+
+    return templateimg;
+}
+
+const pintarTituloBusqueda = (valueinput, arrbusqueda) => {
+
+    const htmlLayout = `
+        <h2 class="home__cajaDeBusqeudas--texto2">
+            ${valueinput}
+        </h2
+        <!-- FIXME:La grilla se esta desbondando al pasar los 24 elementos. -->
+        <div class="layout">
+            ${gifosSeccion(arrbusqueda)}
+        </div>
+        <div class="layout__btn" class="home__cajaDeBusqeudas--button" >
+            <a class="btn btn-purple" href="#">Ver mas....</a>
+        </div>
+    `;
+    
+    const div = document.createElement("div");
+    div.innerHTML = htmlLayout;
+    divpadre.append(div);
 }
 
 
@@ -63,7 +121,8 @@ const pintarSugerencias = (arrSuggest) => {
 export{
     pintarCards,
     pintarpopups,
-    pintarSugerencias
+    pintarSugerencias,
+    pintarTituloBusqueda
 }
 
 
