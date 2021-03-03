@@ -19,7 +19,7 @@ const pintarCards = (arrcards) => {
         clone.querySelector(".sub1").textContent = `${element.nombreusuario}`;
         clone.querySelector(".sub2").textContent = `${element.titulo}`;
         fragment.appendChild(clone);
-        console.log(divwrapper.appendChild(fragment));
+        // console.log(divwrapper.appendChild(fragment));
         divwrapper.appendChild(fragment);
     });
 
@@ -102,7 +102,6 @@ const pintarTituloBusqueda = (valueinput, arrbusqueda) => {
         <h2 class="home__cajaDeBusqeudas--texto2">
             ${valueinput}
         </h2
-        <!-- FIXME:La grilla se esta desbondando al pasar los 24 elementos. -->
         <div class="layout">
             ${gifosSeccion(arrbusqueda)}
         </div>
@@ -111,9 +110,10 @@ const pintarTituloBusqueda = (valueinput, arrbusqueda) => {
         </div>
     `;
     
-    const div = document.createElement("div");
-    div.innerHTML = htmlLayout;
-    divpadre.append(div);
+    const divCardsBusquedas = document.createElement("div");
+    divCardsBusquedas.classList.add('contenedorBusquedas');
+    divCardsBusquedas.innerHTML = htmlLayout;
+    divpadre.append(divCardsBusquedas);
 }
 
 
