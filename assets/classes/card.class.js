@@ -40,10 +40,10 @@ const sugerenciasDeBusqueda = async (value) =>{
   return arrSugerencias;
 }
 
-const busquedas = async (value) => {
+const busquedas = async (value,paso) => {
+  
   let arrcards = [];
-
-  let arrcardsfecht = await fecthData("search",`${value}`, 12, 0, "");
+  let arrcardsfecht = await fecthData("search",`${value}`, 12, 0, paso);
 
   arrcardsfecht.forEach((element) => {
     let card = {
@@ -56,6 +56,7 @@ const busquedas = async (value) => {
     arrcards.push(card);
   });
 
+  
   return arrcards
 };
 

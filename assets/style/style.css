@@ -584,11 +584,8 @@ body {
   opacity: 1;
 }
 
-.contenedorBusquedas {
-  width: 70vw;
-}
-
 .layout {
+  width: 70vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -598,9 +595,8 @@ body {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .layout__img {

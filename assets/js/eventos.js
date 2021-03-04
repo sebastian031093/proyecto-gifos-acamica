@@ -3,8 +3,8 @@
 
 //Caja de sugerencias.
 
-import {busquedas,sugerenciasDeBusqueda } from "../classes/card.class.js";
-import { pintarSugerencias,pintarTituloBusqueda } from "./layoust.js";
+import {sugerenciasDeBusqueda } from "../classes/card.class.js";
+import {pintarSugerencias,pintarTemplateBusqueda } from "./layoust.js";
 
 //elementos a seleccionar.
 
@@ -21,14 +21,13 @@ const eventos = () => {
     const btnsearch = document.querySelector(".btnsearch");
 
 
-
     let userData = '';
 
     input.addEventListener("keyup", async (evento) => {
 
         if (input.value.length > 0) {
             userData = evento.target.value;
-            console.log(userData);
+            // console.log(userData);
             let arrSuggets = await sugerenciasDeBusqueda(userData);
             // console.log(arrSuggets);
             arrSuggets = arrSuggets.map((data) => {
@@ -49,21 +48,20 @@ const eventos = () => {
         // console.log(nombreElamento);
         userData = input.value = nombreElamento;
         
-    })
+    });
 
-    btnsearch.addEventListener('click', async (evento) =>{
+    btnsearch.addEventListener('click',(evento) =>{
         console.log(evento);
     
         if(userData.length > 1){
-            pintarTituloBusqueda(userData, await busquedas(userData));
+            pintarTemplateBusqueda(userData);
+
         }else{
             console.log('sorry not')
-        }
-    })
+        }    
+    });
+    
 }
-
-
-
 
 
 

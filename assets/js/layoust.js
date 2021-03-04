@@ -1,5 +1,7 @@
 //tempaltes de elemento html desde javascript.
 
+import { busquedas } from "../classes/card.class.js";
+
 const pintarCards = (arrcards) => {
     // console.log(arrcards);
 
@@ -19,7 +21,7 @@ const pintarCards = (arrcards) => {
         clone.querySelector(".sub1").textContent = `${element.nombreusuario}`;
         clone.querySelector(".sub2").textContent = `${element.titulo}`;
         fragment.appendChild(clone);
-        // console.log(divwrapper.appendChild(fragment));
+        console.log(divwrapper.appendChild(fragment));
         divwrapper.appendChild(fragment);
     });
 
@@ -45,6 +47,7 @@ const pintarpopups = (arrcards) =>{
 
 }
 
+
 const searchbox = document.querySelector(".searchbox__items");
 const pintarSugerencias = (arrSuggest) => {
     let listaData;
@@ -59,62 +62,67 @@ const pintarSugerencias = (arrSuggest) => {
 }
 
 
-const divpadre = document.querySelector(".home__cajaDeBusqeudas");
+//pintar busquedas de la basrra de busquedas.
 
-const gifosSeccion = (arr) =>{
-    let elementos = [];
-    // debugger
-    arr.forEach(element => {
-        let elemento = `
-            <div class="layout__card">
-                <div class="layout__card--containerimg">
-                    <img src=${element.imagen} alt="img trendings" class="layout__img">
-                </div>
-                <div class="layout__card--icons">
-                    <img src="/assets/img/icon-fav.svg" alt="" class="icon-fav">
-                    <img src="/assets/img/icon-download.svg" alt="icon-download">
-                    <a href=#${element.id} class="ancla"><img src="/assets/img/icon-max-normal.svg" alt="icon-max"></a>
-                </div>
-                <div class="layout__card--titulos">
-                    <h2 class="layoutsub1">
-                        ${element.nombreusuario}
-                    </h2>
-                    <h3 class="layoutsub2">
-                        ${element.titulo}
-                    </h3>
-                </div>
-            </div>
-        `;
-        elementos.push(elemento)
-    });
+const pintarCardsBusqueda = (arrcards) => {
+  const layoutBusquedas = document.querySelector(".layout");
 
-    let templateimg = '';
-    for (let index = 0; index < elementos.length; index++) {
-        templateimg += elementos[index];
-    }
+  arrcards.forEach((element) => {
+    const tempaltecard = document.querySelector("#templateBusquedas").content;
+    const clone = tempaltecard.cloneNode(true);
+    const fragment = document.createDocumentFragment();
 
-    return templateimg;
+    clone.querySelector(".layout__img").setAttribute("src", element.imagen);
+    clone.querySelector(".ancla2").setAttribute("href", `#${element.id}`);
+    clone.querySelector(".layoutsub1").textContent = `${element.nombreusuario}`;
+    clone.querySelector(".layoutsub2").textContent = `${element.titulo}`;
+    fragment.appendChild(clone);
+    layoutBusquedas.appendChild(fragment);
+  });
+};
+
+
+const pintargifosbusquedas = async (value) =>{
+    pintarCardsBusqueda(await busquedas(value));
 }
 
-const pintarTituloBusqueda = (valueinput, arrbusqueda) => {
+const divpadre = document.querySelector(".home__cajaDeBusqeudas");
+
+
+const pintarTemplateBusqueda = (valueinput) => {
 
     const htmlLayout = `
         <h2 class="home__cajaDeBusqeudas--texto2">
             ${valueinput}
-        </h2
+        </h2>
         <div class="layout">
-            ${gifosSeccion(arrbusqueda)}
+            ${pintargifosbusquedas(valueinput)}
         </div>
         <div class="layout__btn" class="home__cajaDeBusqeudas--button" >
             <a class="btn btn-purple" href="#">Ver mas....</a>
         </div>
     `;
     
-    const divCardsBusquedas = document.createElement("div");
-    divCardsBusquedas.classList.add('contenedorBusquedas');
-    divCardsBusquedas.innerHTML = htmlLayout;
-    divpadre.append(divCardsBusquedas);
+    divpadre.innerHTML = htmlLayout;
+
+    setTimeout(() => {
+        const btnvermas = document.querySelector(".layout__btn");
+        let incremento = 2;
+
+        btnvermas.addEventListener("click", (evento) => {
+        console.log(evento.isTrusted); 
+        
+        incremento += 2
+        
+        console.log(incremento);
+        
+        
+      });
+    }, 3000);
 }
+
+
+
 
 
 
@@ -122,7 +130,7 @@ export{
     pintarCards,
     pintarpopups,
     pintarSugerencias,
-    pintarTituloBusqueda
+    pintarTemplateBusqueda,
 }
 
 
