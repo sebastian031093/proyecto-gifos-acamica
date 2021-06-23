@@ -67,7 +67,6 @@ export const fecthData = async (typesearch,busqueda,limit,offset) =>{
  */
 
 export const fecthDataSubggest = async (typesearch,valuetype,limit) =>{
-
     try {
 
         const resp = await fetch(
@@ -86,6 +85,4 @@ export const fecthDataSubggest = async (typesearch,valuetype,limit) =>{
     } catch (error) {
         
     }
-
-
 }

@@ -2,15 +2,24 @@
 .searchbox{
 
     &__input{
-
         height: 5rem;
         border: 1px solid $color-primario;
         padding: 0 0 0 12%;
         border-radius: 3rem;
+        width: 85%;
+        transition: all .2s;
+        margin-right: -3.25rem;
+
+        &:focus{
+            font-weight: 700;
+            color: $color-black;
+            outline: none;
+            width: 95%;
+        }
+
     }
 
     &__backgroud{
-
 
     }
 
@@ -31,8 +40,6 @@
         display: none;
     }
 
-    
-
     &__item:hover{
         background: #efefef;
     }
@@ -41,25 +48,44 @@
 
 
 .btnsearch{
-    position: absolute;
-    padding: 0% 2% 2% 2%;
-    right: 2rem;
-    top: 1.5rem;
-    font-size: 2rem;
-    color: $color-primario;
+    //position: absolute;
+    border: none;
+    background-color: $color-white;
+
+    &:focus{
+        outline: none;
+    }
+
+    &:active{
+        transform: translateY(2px);
+    }
+
+    &-icon{
+        height: 2.0rem;
+        width: 2.0rem;
+        fill: $color-primario;
+    }
 }
 
 .btnclose{
-    position: absolute;
-    left: 2rem;
-    top: 2rem;
+    //position: absolute;
+    border: none;
+    background-color: $color-white;
+
+    display: none;
+    opacity: 0;
+    visibility: none;
+
+    &-icon{
+        height: 2.0rem;
+        width: 2.0rem;
+
+    }
 }
 
 
 
 //CARD search 
-
-
 .home__searchbox.active .searchbox__items{
     opacity: 1;
     pointer-events: auto;

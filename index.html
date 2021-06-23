@@ -15,7 +15,6 @@
              <img src="/assets/img/logo-mobile.svg" alt="logo-img">
         </div>
         
-
         <input class="btn-bugger" type="checkbox" name="my-checkbox" id="burger">
         <label class="menu__burgger" for="burger">
             <span class="menu__burgger--line" ></span>
@@ -46,7 +45,21 @@
                 <!-- TODO:APLICAR ESTILOS A BUSCADOR PARA QUE SE CONTRAIGA  -->
 
                 <div class="home__searchbox">
-                    <input type="text" placeholder="Busca GIFOS y más" class="searchbox__input">
+                    <div class="home__container-input">
+                        <input type="text" placeholder="Busca GIFOS y más" class="searchbox__input tituloBuscador">
+                        <!-- <i class="fas fa-search btnsearch"></i> -->
+                        <!-- <i class="fas fa-times btnclose"></i> -->
+                        <button class="btnsearch">
+                            <svg class="btnsearch-icon">
+                                <use xlink:href="/assets/img/sprite2.svg#icon-magnifying-glass"></use>
+                            </svg>
+                        </button>
+                        <button class="btnclose">
+                            <svg class="btnclose-icon">
+                                <use xlink:href="/assets/img/sprite2.svg#icon-cross"></use>
+                            </svg>
+                        </button>
+                    </div>
                     <div class="searchbox__backgroud">&nbsp;</div>
                     <ul class="searchbox__items">
                         <li class="searchbox__item"> <i class="fas fa-search"></i>sugerencia #1</i></li>
@@ -55,14 +68,9 @@
                         <li class="searchbox__item"> <i class="fas fa-search"></i>sugerencia #1</i></li>
                         <li class="searchbox__item"> <i class="fas fa-search"></i>sugerencia #1</i></li>
                     </ul>
-                    <i class="fas fa-search btnsearch"></i>
-                    <i class="fas fa-times btnclose"></i>
-
                 </div>
                 
             </div>
-
-
             <div class="home__subtreadings">
                 <h2 class="subtitulosfuerte">Trending:</h2>
                 <h3 class="subtitulos">
@@ -70,21 +78,28 @@
                 </h3>
             </div>
 
-            <!-- template de las busquedas -->
+            <!-- TEMPLATE DE LAS BUSQUEDAS -->
             <div class="home__cajaDeBusqeudas">
-    
-                <!-- <h2 class="home__cajaDeBusqeudas--texto2">
+                <h2 class="home__cajaDeBusqeudas--texto2">
                     Mascotas
-                </h2> -->
-                <!-- <div class="layout">
+                </h2>
+                <div class="layout">
                     <div class="layout__card">
                         <div class="layout__card--containerimg">
                             <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
                         </div>
                         <div class="layout__card--icons">
-                            <img src="/assets/img/icon-fav.svg" alt="" class="icon-fav">
-                            <img src="/assets/img/icon-download.svg" alt="icon-download">
-                            <a href="#popup" class="ancla"><img src="/assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="/assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="/assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
                         </div>
                         <div class="layout__card--titulos">
                             <h2 class="layoutsub1">
@@ -94,18 +109,48 @@
                                 Ticulo del gifo
                             </h3>
                         </div>
-                    </div>    
-                </div>  -->
-                
-                <!-- <div class="layout__btn" class="home__cajaDeBusqeudas--button" >
-                    <a class="btn btn-purple" href="#">Ver mas....</a>
-                </div> -->
+                    </div>
 
+                    <!-- <div class="layout__card--containerimg">
+                            <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    </div>
+
+                    <div class="layout__card--containerimg">
+                            <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    </div>
+                    <div class="layout__card--containerimg">
+                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    </div>
+                    <div class="layout__card--containerimg">
+                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    </div>
+                    <div class="layout__card--containerimg">
+                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    </div>
+                    <div class="layout__card--containerimg">
+                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    </div>
+                    <div class="layout__card--containerimg">
+                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    </div>
+                    <div class="layout__card--containerimg">
+                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    </div>
+                    <div class="layout__card--containerimg">
+                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    </div>
+                    <div class="layout__card--containerimg">
+                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    </div>
+                    <div class="layout__card--containerimg">
+                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    </div> -->
+                </div> 
             </div>
-
-            
+            <button class="btn-showMeMore">Ver más</button>
         </section>
 
+        <!-- TREANDINGS -->
         <section class="trendings">
             <h2 class="trendings__titulo">Trending GIFOS</h2>
             <div>
@@ -117,14 +162,22 @@
                 </h3>
             </div>
             <div class="trendings__scrolling--wrapper">
-                <!-- <div class="trendings__scrolling--wrapper-card">
+                <div class="trendings__scrolling--wrapper-card">
                     <div class="trendings__scrolling--wrapper-containerimg">
                         <img src="https://picsum.photos/200/300" alt="img trendings" class="containerimg__img">
                     </div>
                     <div class="trendings__scrolling--wrapper-icons">
-                        <img src="/assets/img/icon-fav.svg" alt="" class="icon-fav">
-                        <img src="/assets/img/icon-download.svg" alt="icon-download">
-                        <a href="#popup"><img src="/assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        <button class="layout__card--icons-like">
+                            <svg>
+                                <use xlink:href="/assets/img/sprite.svg#icon-heart-outlined"></use>
+                            </svg>
+                        </button>
+                        <button class="layout__card--icons-download">
+                            <svg>
+                                <use xlink:href="/assets/img/sprite.svg#icon-cloud-download"></use>
+                            </svg>
+                        </button>
+                        <a href="#popup"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
                     </div>
                     <div class="trendings__scrolling--wrapper-titulos">
                         <h2>
@@ -146,10 +199,11 @@
                 </div>
                 <div class="trendings__scrolling--wrapper-card">
                     <img src="https://picsum.photos/200/300" alt="img trending" class="trendings__img">
-                </div> -->
+                </div>
 
             </div>
         </section>
+        <!-- FOOTER -->
         <footer class="sectionfooter">
             <div class="sectionfooter__wrap">
                 <h2 class="sectionfooter__sub1">
@@ -161,12 +215,12 @@
                         <i class="fab fa-instagram iconredes"></i>
                 </div>
                 <h3 class="sectionfooter__sub2">
-                    © GIFOS 2020 All Rights Reserved.
+                    &copy; GIFOS 2020 All Rights Reserved.
                 </h3>
             </div>
         </footer>
 
-        <!-- //TODO: ID Y SRC del popup y la img del tranding deben se riguales -->
+        <!-- //TODO: ID Y SRC del popup y la img del tranding deben se iguales -->
 
         <div class="popup" id="popup">
             <div class="popup__content">
@@ -180,25 +234,34 @@
                         <h3 class="popup__element--titulos-subtitulo" >titulo gifo</h3>
                     </div>
                     <div class="popup__element--icons">
-                        <img src="/assets/img/icon-fav.svg" alt="" class="popup__element--icons-fav">
-                        <img src="/assets/img/icon-download.svg" alt="" class="popup__element--icons-descarga">
+                        <img src="assets/img/icon-fav.svg" alt="" class="popup__element--icons-fav">
+                        <img src="assets/img/icon-download.svg" alt="" class="popup__element--icons-descarga">
                     </div>
                 </div>
             </div>
         </div> 
+
     </main>
 
     <!-- template para trendings -->
 
-    <template id="template-card">
+    <!-- <template id="template-card">
         <div class="trendings__scrolling--wrapper-card">
             <div class="trendings__scrolling--wrapper-containerimg">
                 <img src="https://picsum.photos/200/300" alt="img trendings" class="containerimg__img">
             </div>
             <div class="trendings__scrolling--wrapper-icons">
-                <img src="/assets/img/icon-fav.svg" alt="" class="icon-fav">
-                <img src="/assets/img/icon-download.svg" alt="icon-download">
-                <a href="#popup" class="ancla"><img src="/assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                <button class="layout__card--icons-like">
+                    <svg>
+                        <use xlink:href="/assets/img/sprite.svg#icon-heart-outlined"></use>
+                    </svg>
+                </button>
+                <button class="layout__card--icons-download">
+                    <svg>
+                        <use xlink:href="/assets/img/sprite.svg#icon-cloud-download"></use>
+                    </svg>
+                </button>
+                <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
             </div>
             <div class="trendings__scrolling--wrapper-titulos">
                 <h2 class="sub1">
@@ -209,9 +272,11 @@
                 </h3>
             </div>
         </div>
-    </template>
+    </template> -->
 
-    <template id="template-popup">
+    <!-- template popup TRENDINGS -->
+
+    <!-- <template id="template-popup">
         <div class="popup" id="popup">
             <div class="popup__content">
                 <a href="#menu" class="popup__close">&times;</a>
@@ -224,28 +289,43 @@
                         <h3 class="popup__element--titulos-subtitulo" >titulo gifo</h3>
                     </div>
                     <div class="popup__element--icons">
-                        <img src="/assets/img/icon-fav.svg" alt="" class="popup__element--icons-fav">
-                        <img src="/assets/img/icon-download.svg" alt="" class="popup__element--icons-descarga">
+                        <button class="layout__card--icons-like">
+                            <svg>
+                                <use xlink:href="/assets/img/sprite.svg#icon-heart-outlined"></use>
+                            </svg>
+                        </button>
+                        <button class="layout__card--icons-download">
+                            <svg>
+                                <use xlink:href="/assets/img/sprite.svg#icon-cloud-download"></use>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </template>
+    </template> -->
 
 
     <!-- template para busquedas del navegador de gifos -->
 
 
-    <template id="templateBusquedas">
-
+    <!-- <template id="templateBusquedas">
         <div class="layout__card">
             <div class="layout__card--containerimg">
                 <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
             </div>
             <div class="layout__card--icons">
-                <img src="/assets/img/icon-fav.svg" alt="" class="icon-fav">
-                <img src="/assets/img/icon-download.svg" alt="icon-download">
-                <a href="#popup" class="ancla2"><img src="/assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                <button class="layout__card--icons-like">
+                    <svg>
+                        <use xlink:href="/assets/img/sprite.svg#icon-heart-outlined"></use>
+                    </svg>
+                </button>
+                <button class="layout__card--icons-download">
+                    <svg>
+                        <use xlink:href="/assets/img/sprite.svg#icon-cloud-download"></use>
+                    </svg>
+                </button>
+                <a href="#popup" class="ancla2"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
             </div>
             <div class="layout__card--titulos">
                 <h2 class="layoutsub1">
@@ -256,9 +336,10 @@
                 </h3>
             </div>
         </div> 
-    </template>
-    
+    </template> -->
 
-    <script type="module" src="app.js"></script>
+    <!-- template para popup del navegador de gifos -->
+    
+    <!-- <script type="module" src="app.js"></script> -->
 </body>
 </html>

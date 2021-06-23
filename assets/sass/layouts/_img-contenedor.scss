@@ -1,42 +1,60 @@
 
 
 .layout{
-    width: 70vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-    &__img{
-        width: 30vw ;
-        height: 20vh;
-    }
-
-    &__btn{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20%;
-    }
-
+    width: 100%;
+    background-color: greenyellow;
     //Estilos de la card de la parte de busqueda.
 
+    display: grid;
+    grid-template-rows: repeat(3, 20rem);
+    grid-auto-rows: 20rem;
+    grid-template-columns: repeat(auto-fit, 26rem);
+    justify-content: center;
+    grid-gap: 2.9rem;
+
     &__card{
-        position: relative;
+        //position: relative;
+        width: 20rem;
+        height: 26rem;
+
+        &--containerimg{
+            width: 100%;
+            height: 100%;
+        }
+
+        &--btn{
+            border: none;
+            background-color: $color-white;
+        }
 
 
         &--icons{
-            position: absolute;
-            top: 0;
-            right: 0;
-            opacity: 0;
+            //position: absolute;
+            //top: 0;
+            //right: 0;
+            //opacity: 0;
+            &-like{
+                height: 3.2rem;
+                width: 3.2rem;
+            }
+
+            &-download{
+                height: 3.2rem;
+                width: 3.2rem;
+            }
         }
 
         &--titulos{
-            position: absolute;
-            top: 9rem;
-            left: 0;
-            opacity: 0;
+            //position: absolute;
+            //top: 9rem;
+            //left: 0;
+            //opacity: 0;
         }
+    }
+
+    &__img{
+        width: 100%;
+        height: 100%;
     }
 
     &__card:hover &__card--icons{
@@ -45,5 +63,28 @@
 
     &__card:hover &__card--titulos{
         opacity: 1;
+    }
+}
+
+// ANCHOR
+.ancla{
+    //border: 1px solid $color-primario;
+    &:link,
+    &:visited{
+        text-decoration: none;
+        padding: 0.2rem 0.2rem;
+        display: inline-block;
+        transition: all .2s;
+    }
+
+    &:hover{
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1.0rem 2.0rem rgba($color-black, .2);
+        color: white;
+    }
+
+    &:active{
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1.0rem rgba($color-black, .2);
     }
 }

@@ -24,7 +24,6 @@ const pintarCards = (arrcards) => {
         console.log(divwrapper.appendChild(fragment));
         divwrapper.appendChild(fragment);
     });
-
 }
 
 const pintarpopups = (arrcards) =>{
@@ -79,6 +78,7 @@ const pintarCardsBusqueda = (arrcards) => {
     fragment.appendChild(clone);
     layoutBusquedas.appendChild(fragment);
   });
+
 };
 
 
@@ -104,21 +104,24 @@ const pintarTemplateBusqueda = (valueinput) => {
     `;
     
     divpadre.innerHTML = htmlLayout;
+    //TODO: TERMINA EL BOTON DE VER MAS...
 
-    setTimeout(() => {
-        const btnvermas = document.querySelector(".layout__btn");
+    // setTimeout(() => {
+        const btnvermas = divpadre.querySelector(".layout__btn");
+        const layoutbusqueda = document.querySelector(".layout");
         let incremento = 2;
-
-        btnvermas.addEventListener("click", (evento) => {
-        console.log(evento.isTrusted); 
         
-        incremento += 2
-        
-        console.log(incremento);
-        
-        
-      });
-    }, 3000);
+        btnvermas.addEventListener("click", async (evento) => {
+            console.log(evento.isTrusted); 
+            evento.preventDefault(); //Prevenir el evento por default.
+            incremento += 2
+            console.log(incremento);
+            
+            console.log(await busquedas(valueinput, incremento));
+            
+             
+        });
+    // }, 1);
 }
 
 

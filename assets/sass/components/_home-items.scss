@@ -15,8 +15,6 @@
                 color: $color-secundario;
             }
         }
-
-        
     }
 
     &__img{
@@ -27,21 +25,30 @@
         }
 
     }
-    //barra de busqueda
 
+    //barra de busqueda
     &__searchbox{
         display: flex;
         flex-direction: column;
         margin: 0 0 0 5%;
         width: 88vw;
-        z-index: 1;
-        position: relative;
+        //z-index: 1;
+        //position: relative;
+    }
+
+    &__container-input{
+        flex: 0 0 40%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
     }
 
 
 
 
-    //trendings
+    //TRENDINGS
     &__subtreadings{
         height: 12rem;
         display: flex;
@@ -52,14 +59,17 @@
     }
 
     &__cajaDeBusqeudas{
-        margin-top: 20%;
-        margin-bottom: 20%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        width: 100vw;
+
         &--texto2{
             text-align: center;
             line-height: 4rem;
             font-size: 2.5rem;
             font-weight: 700;
             color: $color-primario;
+            margin-bottom: 2.5rem;
         }
     }
 
