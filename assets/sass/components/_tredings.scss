@@ -1,17 +1,16 @@
 
-
-//TODO:ARREGLAR TAMAÑANO DE IMG 
-
 .trendings{
     height: 90vh;
     background-color:$color-light-grey;
     text-align: center;
+    margin-top: 7.8rem;
+    padding-bottom: 7px;
     
 
     &__titulo{
         font-size: 20px;
         color: $color-primario;
-        padding-top: 16%;
+        padding-top: 46px;
     }
 
     &__subtitulo{
@@ -20,42 +19,76 @@
         font-family:'Roboto', sans-serif ;
         font-weight: 400;
     }
-    //TODO:AGREGAR EFECTO DE COLOR PURPUTA Y TRANCICION.
+
     &__scrolling--wrapper{
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
+        margin-top: 3.2rem;
+        width: 80vw;
+        height: 32rem;
+
 
         &-card{
             flex: 0 0 auto;
-            margin: 10% 8% 0 8%;
-            position: relative;
+            // margin: 10% 8% 0 8%;
+            // position: relative;
+            width: 30rem;
+            height: 30rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            //overflow: hidden;
+        }
+
+
+
+        &-containerimg{
+            grid-column: 1 / -1;
+            grid-row: 1 / -1;
+        
         }
 
         &-icons{
-            position: absolute;
-            right: 0;
-            top: 0;
             opacity: 0;
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
         }
 
         &-titulos{
-            position: absolute;
-            left: 0;
-            top: 230px;
             opacity: 0;
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+
+            h2{
+                margin-top: 239px;
+            }
         }
+
+        &-img{
+            width: 100%;
+            height: 100%;
+            
+        }
+
 
         &-card:hover &-icons{
             opacity: 1;
+            @include transitionProperti;
         }
 
         &-card:hover &-titulos{
             opacity: 1;
+            @include transitionProperti;
         }
 
     }
 
+}
+
+
+.boxtrendings{
+    display: flex;
+    align-items: center;
 }
 
 

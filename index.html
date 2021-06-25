@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <title>Proyecto gihos 🐱‍👤🐱‍👤</title>
 </head>
-<body>
-    <header class="menu" id="menu">
+<body class="body">
+    <nav class="menu" id="menu">
         <div class="menu__logo">
-             <img src="/assets/img/logo-mobile.svg" alt="logo-img">
+             <img src="assets/img/logo-mobile.svg" alt="logo-img">
         </div>
         
         <input class="btn-bugger" type="checkbox" name="my-checkbox" id="burger">
@@ -25,9 +25,14 @@
                 <li class="list-menu" ><a class="menu__items-item" href="#">Modo Nocturno</a></li>
                 <li class="list-menu" ><a class="menu__items-item" href="#">Favoritos</a></li>
                 <li class="list-menu" ><a class="menu__items-item" href="#">Mis gifos</a></li>
+                <button class="btn__creategift">
+                    <svg class="btn__creategift--create">
+                        <use xlink:href="assets/img/sprite.svg#icon-plus"></use>
+                    </svg>
+                </button>
             </ul> 
         </div>
-    </header>
+    </nav>
 
     <main class="main">  
         <section class="home">
@@ -39,7 +44,7 @@
                 </div>
 
                 <div class="home__img">
-                    <img src="/assets/img/ilustra_header.svg" alt="imagen principal" class="home__img--picture">
+                    <img src="assets/img/ilustra_header.svg" alt="imagen principal" class="home__img--picture">
                 </div>
 
                 <!-- TODO:APLICAR ESTILOS A BUSCADOR PARA QUE SE CONTRAIGA  -->
@@ -51,12 +56,12 @@
                         <!-- <i class="fas fa-times btnclose"></i> -->
                         <button class="btnsearch">
                             <svg class="btnsearch-icon">
-                                <use xlink:href="/assets/img/sprite2.svg#icon-magnifying-glass"></use>
+                                <use xlink:href="assets/img/sprite2.svg#icon-magnifying-glass"></use>
                             </svg>
                         </button>
                         <button class="btnclose">
                             <svg class="btnclose-icon">
-                                <use xlink:href="/assets/img/sprite2.svg#icon-cross"></use>
+                                <use xlink:href="assets/img/sprite2.svg#icon-cross"></use>
                             </svg>
                         </button>
                     </div>
@@ -84,19 +89,20 @@
                     Mascotas
                 </h2>
                 <div class="layout">
+                    
                     <div class="layout__card">
                         <div class="layout__card--containerimg">
-                            <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
                         </div>
                         <div class="layout__card--icons">
                             <button class="layout__card--btn">
                                 <svg class="layout__card--icons-like">
-                                    <use xlink:href="/assets/img/sprite.svg#icon-heart-outlined"></use>
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
                                 </svg>
                             </button>
                             <button class="layout__card--btn">
                                 <svg class="layout__card--icons-download">
-                                    <use xlink:href="/assets/img/sprite.svg#icon-cloud-download"></use>
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
                                 </svg>
                             </button>
                             <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
@@ -111,40 +117,308 @@
                         </div>
                     </div>
 
-                    <!-- <div class="layout__card--containerimg">
-                            <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="assets/img/auck.jpg" alt="" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
                     </div>
 
-                    <div class="layout__card--containerimg">
-                            <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
                     </div>
-                    <div class="layout__card--containerimg">
-                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
                     </div>
-                    <div class="layout__card--containerimg">
-                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
                     </div>
-                    <div class="layout__card--containerimg">
-                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
                     </div>
-                    <div class="layout__card--containerimg">
-                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
                     </div>
-                    <div class="layout__card--containerimg">
-                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
                     </div>
-                    <div class="layout__card--containerimg">
-                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
                     </div>
-                    <div class="layout__card--containerimg">
-                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
                     </div>
-                    <div class="layout__card--containerimg">
-                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
+
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
                     </div>
-                    <div class="layout__card--containerimg">
-                        <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
-                    </div> -->
+
+                    <div class="layout__card">
+                        <div class="layout__card--containerimg">
+                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
+                        </div>
+                        <div class="layout__card--icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                        </div>
+                        <div class="layout__card--titulos">
+                            <h2 class="layoutsub1">
+                                User
+                            </h2>
+                            <h3 class="layoutsub2">
+                                Ticulo del gifo
+                            </h3>
+                        </div>
+                    </div>
+
+
+
+
+
+
                 </div> 
             </div>
             <button class="btn-showMeMore">Ver más</button>
@@ -161,47 +435,52 @@
                     GIFOS de nuestra comunidad.
                 </h3>
             </div>
-            <div class="trendings__scrolling--wrapper">
-                <div class="trendings__scrolling--wrapper-card">
-                    <div class="trendings__scrolling--wrapper-containerimg">
-                        <img src="https://picsum.photos/200/300" alt="img trendings" class="containerimg__img">
+
+            <div class="boxtrendings">
+                <button class="btn__buttonCarruselLeft">
+                    <svg class="btn__buttonCarruselLeft-icon">
+                        <use xlink:href="assets/img/sprite.svg#icon-chevron-thin-left"></use>
+                    </svg>
+                </button>
+
+                <div class="trendings__scrolling--wrapper">
+                    <div class="trendings__scrolling--wrapper-card">
+                        <div class="trendings__scrolling--wrapper-containerimg">
+                            <img src="assets/img/auck.jpg" alt="img trendings"  class="trendings__scrolling--wrapper-img">
+                        </div>
+                        <div class="trendings__scrolling--wrapper-icons">
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-like">
+                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
+                                </svg>
+                            </button>
+                            <button class="layout__card--btn">
+                                <svg class="layout__card--icons-download">
+                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                                </svg>
+                            </button>
+                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg"    alt="icon-max"></a>
+                        </div>
+                        <div class="trendings__scrolling--wrapper-titulos">
+                            <h2>
+                                User
+                            </h2>
+                            <h3>
+                                Ticulo del gifo
+                            </h3>
+                        </div>
                     </div>
-                    <div class="trendings__scrolling--wrapper-icons">
-                        <button class="layout__card--icons-like">
-                            <svg>
-                                <use xlink:href="/assets/img/sprite.svg#icon-heart-outlined"></use>
-                            </svg>
-                        </button>
-                        <button class="layout__card--icons-download">
-                            <svg>
-                                <use xlink:href="/assets/img/sprite.svg#icon-cloud-download"></use>
-                            </svg>
-                        </button>
-                        <a href="#popup"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
-                    </div>
-                    <div class="trendings__scrolling--wrapper-titulos">
-                        <h2>
-                            User
-                        </h2>
-                        <h3>
-                            Ticulo del gifo
-                        </h3>
-                    </div>
                 </div>
-                <div class="trendings__scrolling--wrapper-card">
-                    <img src="https://picsum.photos/200/300" alt="img trending" class="trendings__img">
-                </div>
-                <div class="trendings__scrolling--wrapper-card">
-                    <img src="https://picsum.photos/200/300" alt="img trending" class="trendings__img">
-                </div>
-                <div class="trendings__scrolling--wrapper-card">
-                    <img src="https://picsum.photos/200/300" alt="img trending" class="trendings__img">
-                </div>
-                <div class="trendings__scrolling--wrapper-card">
-                    <img src="https://picsum.photos/200/300" alt="img trending" class="trendings__img">
-                </div>
+                
+                <button class="btn__buttonCarruselRight">
+                    <svg class="btn__buttonCarruselRight-icon">
+                        <use xlink:href="assets/img/sprite.svg#icon-chevron-thin-right"></use>
+                    </svg>
+                </button>
 
             </div>
+            
+            
         </section>
         <!-- FOOTER -->
         <footer class="sectionfooter">
@@ -209,11 +488,10 @@
                 <h2 class="sectionfooter__sub1">
                     Compartir en:
                 </h2>
-                <div class="sectionfooter__redes">
-                        <i class="fab fa-facebook-f iconredes"></i>
-                        <i class="fab fa-twitter iconredes"></i>
-                        <i class="fab fa-instagram iconredes"></i>
-                </div>
+                <i class="fab fa-facebook-f iconredes"></i>
+                <i class="fab fa-twitter iconredes"></i>
+                <i class="fab fa-instagram iconredes"></i>
+                
                 <h3 class="sectionfooter__sub2">
                     &copy; GIFOS 2020 All Rights Reserved.
                 </h3>

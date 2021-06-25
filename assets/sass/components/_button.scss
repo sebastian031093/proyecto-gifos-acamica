@@ -85,3 +85,52 @@
         color: $color-white;
     }
 }
+
+.btn__creategift{
+    border: none;
+    border-radius: 50%;
+    background-color: $color-white;
+    border: 1px solid $color-primario;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    
+
+    &--create{
+        width: 6rem;
+        height: 6rem;
+        fill: $color-primario;
+    }
+}
+
+.btn__buttonCarruselLeft{
+    border: none;
+    background-color: $color-white;
+    border: 1px solid $color-primario;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+
+    &-icon{
+        width: 6rem;
+        height: 6rem;
+        fill: $color-primario;
+
+    }
+}
+
+.btn__buttonCarruselRight{
+    border: none;
+    background-color: $color-white;
+    border: 1px solid $color-primario;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+
+    &-icon{
+        width: 6rem;
+        height: 6rem;
+        fill: $color-primario;
+
+    }
+}
