@@ -8,7 +8,7 @@
         border-radius: 3rem;
         width: 85%;
         transition: all .2s;
-        margin-right: -3.25rem;
+        margin-right: -5.25rem;
 
         &:focus{
             font-weight: 700;
@@ -51,6 +51,8 @@
     //position: absolute;
     border: none;
     background-color: $color-white;
+    width: 4.0rem;
+    height: 4.0rem;
 
     &:focus{
         outline: none;

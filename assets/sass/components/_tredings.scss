@@ -25,7 +25,7 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         margin-top: 3.2rem;
-        width: 80vw;
+        width: 100vw;
         height: 32rem;
 
 
@@ -43,6 +43,8 @@
 
 
         &-containerimg{
+            width: 30rem;
+            height: 30rem;
             grid-column: 1 / -1;
             grid-row: 1 / -1;
         

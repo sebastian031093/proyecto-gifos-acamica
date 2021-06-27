@@ -16,7 +16,7 @@ const pintarCards = (arrcards) => {
         const tempaltecard = document.querySelector("#template-card").content; //CAPTURAMOS NUESTRO TEMPLATE
         const clone = tempaltecard.cloneNode(true); //es todo el template clonado, EN LOS LOOPS NO MANIPULAMOS DIRECTAMENTE ESTE TEMPLATE, SINO QUE LO CLONAMOS
         const fragment = document.createDocumentFragment(); //sumamente efectivo para crear loops, evita el reflow(RENDERISADOS INECESARIOS)
-        clone.querySelector(".containerimg__img").setAttribute('src', element.imagen);
+        clone.querySelector(".trendings__scrolling--wrapper-img").setAttribute("src", element.imagen);
         clone.querySelector(".ancla").setAttribute("href",`#${element.id}`);
         clone.querySelector(".sub1").textContent = `${element.nombreusuario}`;
         clone.querySelector(".sub2").textContent = `${element.titulo}`;
@@ -63,13 +63,17 @@ const pintarSugerencias = (arrSuggest) => {
 
 //pintar busquedas de la basrra de busquedas.
 
+
+
 const pintarCardsBusqueda = (arrcards) => {
+
   const layoutBusquedas = document.querySelector(".layout");
 
   arrcards.forEach((element) => {
     const tempaltecard = document.querySelector("#templateBusquedas").content;
     const clone = tempaltecard.cloneNode(true);
     const fragment = document.createDocumentFragment();
+    
 
     clone.querySelector(".layout__img").setAttribute("src", element.imagen);
     clone.querySelector(".ancla2").setAttribute("href", `#${element.id}`);
@@ -77,52 +81,34 @@ const pintarCardsBusqueda = (arrcards) => {
     clone.querySelector(".layoutsub2").textContent = `${element.titulo}`;
     fragment.appendChild(clone);
     layoutBusquedas.appendChild(fragment);
+
   });
 
 };
 
 
-const pintargifosbusquedas = async (value) =>{
-    pintarCardsBusqueda(await busquedas(value));
-}
+
 
 const divpadre = document.querySelector(".home__cajaDeBusqeudas");
 
+const pintarTituloandButton = async (valueinput) => {
+  const containerText = document.querySelector(".containerText");
+  const containerButton = document.querySelector(".containerButton");
 
-const pintarTemplateBusqueda = (valueinput) => {
-
-    const htmlLayout = `
-        <h2 class="home__cajaDeBusqeudas--texto2">
-            ${valueinput}
-        </h2>
-        <div class="layout">
-            ${pintargifosbusquedas(valueinput)}
-        </div>
-        <div class="layout__btn" class="home__cajaDeBusqeudas--button" >
-            <a class="btn btn-purple" href="#">Ver mas....</a>
-        </div>
+  const htmltitulogift = `
+    <h2 class="home__cajaDeBusqeudas--texto2">
+        ${valueinput}
+    </h2>
     `;
-    
-    divpadre.innerHTML = htmlLayout;
-    //TODO: TERMINA EL BOTON DE VER MAS...
 
-    // setTimeout(() => {
-        const btnvermas = divpadre.querySelector(".layout__btn");
-        const layoutbusqueda = document.querySelector(".layout");
-        let incremento = 2;
-        
-        btnvermas.addEventListener("click", async (evento) => {
-            console.log(evento.isTrusted); 
-            evento.preventDefault(); //Prevenir el evento por default.
-            incremento += 2
-            console.log(incremento);
-            
-            console.log(await busquedas(valueinput, incremento));
-            
-             
-        });
-    // }, 1);
-}
+  const htmlbuttonShowMore = `
+    <button class="btn-showMeMore">Ver más</button>
+  `;
+
+  containerText.innerHTML= htmltitulogift;
+  containerButton.innerHTML= htmlbuttonShowMore;
+
+};
 
 
 
@@ -133,7 +119,8 @@ export{
     pintarCards,
     pintarpopups,
     pintarSugerencias,
-    pintarTemplateBusqueda,
+    pintarTituloandButton,
+    pintarCardsBusqueda,
 }
 
 

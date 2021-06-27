@@ -559,6 +559,18 @@ body {
           justify-content: space-between;
 }
 
+.popup__element--titulos {
+  position: absolute;
+  bottom: 2px;
+  left: 13px;
+}
+
+.popup__element--icons {
+  position: absolute;
+  top: 1rem;
+  left: 40.7rem;
+}
+
 .popup:target {
   opacity: 1;
   visibility: visible;
@@ -578,7 +590,7 @@ body {
   width: 85%;
   -webkit-transition: all .2s;
   transition: all .2s;
-  margin-right: -3.25rem;
+  margin-right: -5.25rem;
 }
 
 .searchbox__input:focus {
@@ -611,6 +623,8 @@ body {
 .btnsearch {
   border: none;
   background-color: #FFFFFF;
+  width: 4.0rem;
+  height: 4.0rem;
 }
 
 .btnsearch:focus {
@@ -679,7 +693,7 @@ body {
       flex-wrap: nowrap;
   overflow-x: auto;
   margin-top: 3.2rem;
-  width: 80vw;
+  width: 100vw;
   height: 32rem;
 }
 
@@ -696,6 +710,8 @@ body {
 }
 
 .trendings__scrolling--wrapper-containerimg {
+  width: 30rem;
+  height: 30rem;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
 }
@@ -768,14 +784,12 @@ body {
 }
 
 .layout__card {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
   overflow: hidden;
+  height: 30rem;
+  width: 25rem;
 }
 
-.layout__card:hover {
+.layout__card--containerimg:hover {
   background-color: rgba(87, 46, 229, 0.65);
   -webkit-transition-duration: 1000ms;
           transition-duration: 1000ms;
@@ -783,28 +797,9 @@ body {
   transition-property: all;
 }
 
-.layout__card--containerimg {
-  grid-column: 1 / -1;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
-  z-index: -1;
-}
-
 .layout__card--btn {
   border: none;
   background-color: #FFFFFF;
-}
-
-.layout__card--icons {
-  opacity: 0;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
-  margin: 5px 0px 0 15px;
 }
 
 .layout__card--icons-like {
@@ -815,19 +810,6 @@ body {
 .layout__card--icons-download {
   height: 3.2rem;
   width: 3.2rem;
-}
-
-.layout__card--titulos {
-  opacity: 0;
-  grid-column: 1 / -1;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
-  margin-left: 1.0rem;
-}
-
-.layout__card--titulos h2 {
-  margin: 129px 0 0 0;
 }
 
 .layout__img {

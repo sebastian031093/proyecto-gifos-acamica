@@ -1,5 +1,7 @@
+
 import { fecthData,fecthDataSubggest } from "../js/http-providers.js"
-import { pintarCards,pintarpopups } from "../js/layoust.js";
+import { pintarCards,pintarCardsBusqueda,pintarpopups } from "../js/layoust.js";
+
 
 
 
@@ -8,6 +10,8 @@ const cardstreandigs = async () =>{
 
     let arrcardsfecht = await fecthData("trending", "", 5, 0, "");
 
+
+  //TODO: Crea una clase pata el gif, donde puedas poner sus propiedades y metodos.
     arrcardsfecht.forEach((element) => {
         let card = {
           id: element.id,
@@ -22,6 +26,7 @@ const cardstreandigs = async () =>{
     // return arrcards;
     pintarCards(arrcards);
     pintarpopups(arrcards);
+    
       
 }
 
@@ -37,14 +42,16 @@ const sugerenciasDeBusqueda = async (value) =>{
     }
     arrSugerencias.push(subggets)
   });
+
   return arrSugerencias;
 }
+
+
 
 const busquedas = async (value,paso) => {
   
   let arrcards = [];
   let arrcardsfecht = await fecthData("search",`${value}`, 12, paso);
-
   arrcardsfecht.forEach((element) => {
     let card = {
       id: element.id,
@@ -52,12 +59,14 @@ const busquedas = async (value,paso) => {
       nombreusuario: element.username,
       imagen: element.images.original.url,
     };
-
+    
     arrcards.push(card);
   });
-
   
-  return arrcards
+  console.log(arrcards);
+  pintarCardsBusqueda(arrcards);
+  pintarpopups(arrcards);
+  return arrcards;
 };
 
 
@@ -65,9 +74,7 @@ const busquedas = async (value,paso) => {
 
 
 export { 
-  
   cardstreandigs,
   sugerenciasDeBusqueda,
   busquedas
-
 };

@@ -10,20 +10,17 @@
     margin: 0 2% 0 4%;
     
     &__card{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
         overflow: hidden;
+        height: 30rem;
+        width: 25rem;
         
-        &:hover{
-            background-color: rgba($color-primario, 0.65);
-            @include transitionProperti;
-            
-        }
+        
 
         &--containerimg{
-            grid-column: 1 / -1;
-            grid-row: 1 / 2;
-            z-index: -1;
+            &:hover{
+            background-color: rgba($color-primario, 0.65);
+            @include transitionProperti;
+        }
         }
 
         &--btn{
@@ -33,10 +30,8 @@
 
 
         &--icons{
-            opacity: 0;
-            grid-row: 1 / 2;
-            grid-column: 2 / 3;
-            margin: 5px 0px 0 15px;
+            //opacity: 0;
+            
 
             &-like{
                 height: 3.2rem;
@@ -50,13 +45,11 @@
         }
 
         &--titulos{
-            opacity: 0;
-            grid-column: 1 / -1;
-            grid-row: 1 / 2;
-            margin-left: 1.0rem;
+            //opacity: 0;
+            
 
             h2{
-                margin: 129px 0 0 0;
+                
             }
         }
     }

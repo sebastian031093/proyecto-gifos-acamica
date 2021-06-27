@@ -49,9 +49,7 @@ export const fecthData = async (typesearch,busqueda,limit,offset) =>{
         }
 
         const {data} = await resp.json();
-
         return data
-
 
     } catch (error) {
         throw(error)

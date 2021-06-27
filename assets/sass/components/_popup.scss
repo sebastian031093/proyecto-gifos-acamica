@@ -51,6 +51,9 @@
         justify-content: space-between;
 
         &--titulos{
+            position: absolute;
+            bottom: 2px;
+            left: 13px;
 
             &-titulos{
 
@@ -62,16 +65,9 @@
         }
 
         &--icons{
-
-            &-fav{
-
-            }
-
-            &-descarga{
-
-            }
-
-
+            position: absolute;
+            top: 1rem;
+            left: 40.7rem;
         }
     }
 
