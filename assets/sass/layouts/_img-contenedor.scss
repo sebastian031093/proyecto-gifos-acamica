@@ -1,27 +1,23 @@
 
 .layout{
-    width: 90%;
+    width: 100%;
     //background-color: greenyellow;
     //Estilos de la card de la parte de busqueda.
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
     grid-gap: 2rem;
     justify-content: center;
-    margin: 0 2% 0 4%;
+    padding: 0 2.5rem 0 2.5rem;
+
+    
     
     &__card{
         overflow: hidden;
         height: 30rem;
-        width: 25rem;
-        
-        
-
-        &--containerimg{
-            &:hover{
-            background-color: rgba($color-primario, 0.65);
-            @include transitionProperti;
-        }
-        }
+        width: 100%;
+        position: relative;
+        box-shadow: 0 0 5px gray;
+        border-radius: 4px;
 
         &--btn{
             border: none;
@@ -31,7 +27,17 @@
 
         &--icons{
             //opacity: 0;
-            
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: right;
+            padding: 1em;
+            backdrop-filter: blur(2px);
+            background-color: rgba($color-primario, 0.55);
+            transform: rotateX(90deg) scale(1);
+            transition: all 0.4s ease;
 
             &-like{
                 height: 3.2rem;
@@ -46,34 +52,25 @@
 
         &--titulos{
             //opacity: 0;
-            
-
-            h2{
-                
-            }
+            position: absolute;
+            bottom: 0;
         }
     }
 
     &__img{
         width: 100%;
         height: 100%;
+        
     }
 
-    &__card:hover &__card--icons{
-        opacity: 1;
-        z-index: 100;
-        @include transitionProperti;
-    }
+}
 
-    &__card:hover &__card--titulos{
-        opacity: 1;
-        @include transitionProperti;
-    }
+.layout__card:hover .layout__card--icons{
+    transform: rotateX(0) scale(1);
 }
 
 // ANCHOR
 .ancla{
-    //border: 1px solid $color-primario;
     &:link,
     &:visited{
         text-decoration: none;
