@@ -2,7 +2,26 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 62.5%; //Todo nuestro diseño depende de este tamaño de funte gracias a los rem 1 rem = 16px, pero nosotros setup ese valor a 1 rem = 10px;  10px/16px = 62.5%
+
+  //TODO: Definir los tamaños de funte para cada dispositivo
+  @include respond(phone){
+    font-size: 100%;
+  }
+
+  @include respond(tab-port){
+    font-size: 112.5%;  // 1rem = 17px, 17/16 = 112.5%
+  }
+
+  @include respond(tab-land){
+    font-size: 125%; //1rem = 20px, 20/16 = 125%
+  }
+
+  @include respond(desktop){
+    font-size: 156.25%; //1rem = 25px, 25/16 = 156.25%
+  }
+
+
 
 }
 *,
@@ -13,7 +32,7 @@ html {
   padding: 0;
 }
 
-.body{
+.main{
   border-top: .8rem solid $color-primario;
   border-radius: 1rem;
   border-bottom: .8rem solid $color-primario;

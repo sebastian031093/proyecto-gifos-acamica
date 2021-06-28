@@ -129,11 +129,12 @@
 
 .btn-bugger:checked ~ .menu__burgger .menu__burgger--line{
     background: transparent;
+    //opacity: 0;
 
 }
 
 .btn-bugger:checked ~ .menu__burgger .menu__burgger--line::before{
-    // opacity: 1;
+    opacity: 1;
     transform: rotate(405deg);
 
 }
@@ -148,5 +149,63 @@
     top: 0;
 }
 
+
+//Darck mode
+
+.btn-darkmode{
+    opacity: 0;
+    visibility: 0;
+    display: none;
+}
+
+.btn-darkmode:checked  ~ .menu > .menu__backgroud{
+    background-color: tomato;
+    //transition: all 3s;
+}
+
+
+
+.btn-darkmode:checked  ~ .menu .menu__burgger > .menu__burgger--line::before,
+.btn-darkmode:checked  ~ .menu .menu__burgger > .menu__burgger--line::after{
+    background: $color-white;
+}
+
+
+.btn-darkmode:checked  ~ .main{
+    background-color: tomato;
+    border-top: .8rem solid $color-black;
+  border-radius: 1rem;
+  border-bottom: .8rem solid $color-black;
+}
+
+.btn-darkmode:checked  ~ .main{
+    h2,h3{
+        color: $color-white;
+    }
+}
+
+
+
+.btn-darkmode:checked ~ .main .home__container-input > .searchbox__input{
+    border: 1px solid $color-white;
+    background-color: pink;
+}
+
+.btn-darkmode:checked ~ .main .home__container-input > .btnsearch{
+    background-color: pink;
+}
+
+.btn-darkmode:checked ~ .main .home__container-input > .btnclose{
+    background-color: pink;
+}
+
+.btn-darkmode:checked ~ .main .home__container-input .btnsearch > .btnsearch-icon{
+    fill: $color-white;
+}
+
+.btn-darkmode:checked  ~ .main .trendings{
+    background-color: yellowgreen;
+    //transition: all 3s;
+}
 
 

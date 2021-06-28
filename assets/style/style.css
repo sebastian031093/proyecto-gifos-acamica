@@ -1,3 +1,17 @@
+/*
+0 - 600px:        Phone
+600 - 900px       Tablet portatil
+900 - 1200px      Tablet landscape
+[1200 - 1800]     Desktop
+1800px ++:        Big desktop
+*/
+/*
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- desktop
+*/
 @-webkit-keyframes moveInBtton {
   0% {
     opacity: 0;
@@ -10,7 +24,6 @@
             transform: translateY(0);
   }
 }
-
 @keyframes moveInBtton {
   0% {
     opacity: 0;
@@ -30,6 +43,30 @@ html {
   font-size: 62.5%;
 }
 
+@media (min-width: 37.5em) {
+  html {
+    font-size: 100%;
+  }
+}
+
+@media (min-width: 56.25em) {
+  html {
+    font-size: 112.5%;
+  }
+}
+
+@media (min-width: 67.5rem) {
+  html {
+    font-size: 125%;
+  }
+}
+
+@media (min-width: 75em) {
+  html {
+    font-size: 156.25%;
+  }
+}
+
 *,
 *:before,
 *:after {
@@ -39,7 +76,7 @@ html {
   padding: 0;
 }
 
-.body {
+.main {
   border-top: 0.8rem solid #572EE5;
   border-radius: 1rem;
   border-bottom: 0.8rem solid #572EE5;
@@ -481,6 +518,7 @@ body {
 }
 
 .btn-bugger:checked ~ .menu__burgger .menu__burgger--line::before {
+  opacity: 1;
   -webkit-transform: rotate(405deg);
           transform: rotate(405deg);
 }
@@ -494,6 +532,53 @@ body {
 .btn-bugger:checked ~ .menu__burgger:not(steps) .menu__burgger--line::before,
 .btn-bugger:checked ~ .menu__burgger:not(steps) .menu__burgger--line::after {
   top: 0;
+}
+
+.btn-darkmode {
+  opacity: 0;
+  visibility: 0;
+  display: none;
+}
+
+.btn-darkmode:checked ~ .menu > .menu__backgroud {
+  background-color: tomato;
+}
+
+.btn-darkmode:checked ~ .menu .menu__burgger > .menu__burgger--line::before,
+.btn-darkmode:checked ~ .menu .menu__burgger > .menu__burgger--line::after {
+  background: #FFFFFF;
+}
+
+.btn-darkmode:checked ~ .main {
+  background-color: tomato;
+  border-top: 0.8rem solid #000000;
+  border-radius: 1rem;
+  border-bottom: 0.8rem solid #000000;
+}
+
+.btn-darkmode:checked ~ .main h2, .btn-darkmode:checked ~ .main h3 {
+  color: #FFFFFF;
+}
+
+.btn-darkmode:checked ~ .main .home__container-input > .searchbox__input {
+  border: 1px solid #FFFFFF;
+  background-color: pink;
+}
+
+.btn-darkmode:checked ~ .main .home__container-input > .btnsearch {
+  background-color: pink;
+}
+
+.btn-darkmode:checked ~ .main .home__container-input > .btnclose {
+  background-color: pink;
+}
+
+.btn-darkmode:checked ~ .main .home__container-input .btnsearch > .btnsearch-icon {
+  fill: #FFFFFF;
+}
+
+.btn-darkmode:checked ~ .main .trendings {
+  background-color: yellowgreen;
 }
 
 .popup {

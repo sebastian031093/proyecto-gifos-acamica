@@ -63,7 +63,7 @@ const busquedas = async (value,paso) => {
     arrcards.push(card);
   });
   
-  console.log(arrcards);
+  //console.log(arrcards);
   pintarCardsBusqueda(arrcards);
   pintarpopups(arrcards);
   return arrcards;

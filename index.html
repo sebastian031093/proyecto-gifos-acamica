@@ -10,6 +10,7 @@
     <title>Proyecto gihos 🐱‍👤🐱‍👤</title>
 </head>
 <body class="body">
+    <input class="btn-darkmode" type="checkbox" name="my-checkbox">
     <nav class="menu" id="menu">
         <div class="menu__logo">
              <img src="assets/img/logo-mobile.svg" alt="logo-img">
@@ -21,8 +22,10 @@
         </label>
         <div class="menu__backgroud">&nbsp;</div>
         <div class="menu__nav">
-            <ul class="menu__items" >
-                <li class="list-menu" ><a class="menu__items-item" href="#">Modo Nocturno</a></li>
+            <ul class="menu__items">
+                <li class="list-menu listdark" >
+                    <a class="menu__items-item darkMode" href="#">Modo Nocturno</a>
+                </li>
                 <li class="list-menu" ><a class="menu__items-item" href="#">Favoritos</a></li>
                 <li class="list-menu" ><a class="menu__items-item" href="#">Mis gifos</a></li>
                 <button class="btn__creategift">
@@ -229,12 +232,12 @@
             <div class="trendings__scrolling--wrapper-icons">
                 <button class="layout__card--btn">
                     <svg class="layout__card--icons-like">
-                        <use xlink:href="/assets/img/sprite.svg#icon-heart-outlined"></use>
+                        <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
                     </svg>
                 </button>
                 <button class="layout__card--btn">
                     <svg class="layout__card--icons-download">
-                        <use xlink:href="/assets/img/sprite.svg#icon-cloud-download"></use>
+                        <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
                     </svg>
                 </button>
                 <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
@@ -256,7 +259,7 @@
         <div class="popup" id="popup">
             <div class="popup__content">
                 <a href="#menu" class="popup__close">&times;</a>
-                <img src="https://picsum.photos/200/300" alt="" class="popup__content--imgcontainer-img">
+                <img src="https://picsum.photos/200/300" alt="img poups" class="popup__content--imgcontainer-img">
                 <div class="popup__element">
                     <div class="popup__element--titulos">
                         <h2 class="popup__element--titulos-titulo">user</h2>
@@ -265,12 +268,12 @@
                     <div class="popup__element--icons">
                         <button class="layout__card--btn">
                             <svg class="layout__card--icons-like">
-                                <use xlink:href="/assets/img/sprite.svg#icon-heart-outlined"></use>
+                                <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
                             </svg>
                         </button>
                         <button class="layout__card--btn">
                             <svg class="layout__card--icons-download">
-                                <use xlink:href="/assets/img/sprite.svg#icon-cloud-download"></use>
+                                <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
                             </svg>
                         </button>
                     </div>
@@ -290,12 +293,12 @@
             <div class="layout__card--icons">
                 <button class="layout__card--btn">
                     <svg class="layout__card--icons-like">
-                        <use xlink:href="/assets/img/sprite.svg#icon-heart-outlined"></use>
+                        <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
                     </svg>
                 </button>
                 <button class="layout__card--btn">
                     <svg class="layout__card--icons-download">
-                        <use xlink:href="/assets/img/sprite.svg#icon-cloud-download"></use>
+                        <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
                     </svg>
                 </button>
                 <a href="#popup" class="ancla2"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
