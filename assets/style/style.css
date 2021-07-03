@@ -262,6 +262,10 @@ body {
   fill: #572EE5;
 }
 
+.btn__likeActive {
+  fill: #50E3C2;
+}
+
 .sectionfooter {
   margin-top: 4.9rem;
 }

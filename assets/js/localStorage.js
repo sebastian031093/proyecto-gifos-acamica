@@ -6,6 +6,7 @@ function setLocalSorage(arry) {
     localStorage.setItem('gifisInfo',JSON.stringify(arry))
 }
 
+
 function getLocalStorage(key) {
     const data = JSON.parse(localStorage.getItem(key));
     console.log(data);
@@ -14,10 +15,11 @@ function getLocalStorage(key) {
 
     pintarCardsBusqueda(data);
     pintarpopups(data);
+    return data
 }
 
 
 export{
     setLocalSorage,
-    getLocalStorage
+    getLocalStorage,
 }

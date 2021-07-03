@@ -5,7 +5,7 @@ let id = 0;
 
 const idLike = () => {
   id++
-  return id
+  return id + ''
 }
 
 const pintarCards = (arrcards) => {
@@ -80,10 +80,10 @@ const pintarCardsBusqueda = (arrcards) => {
     const clone = tempaltecard.cloneNode(true);
     const fragment = document.createDocumentFragment();
     
-
     clone.querySelector(".layout__img").setAttribute("src", element.imagen);
     clone.querySelector(".ancla2").setAttribute("href", `#${element.id}`);
-    clone.querySelector(".layout__card--icons-like").setAttribute("data-id",idLike());
+    clone.querySelector(".layout__card--icons-like").setAttribute("data-target", `${element.id}`);
+    clone.querySelector(".bnt-like").setAttribute("data-id", idLike())
     clone.querySelector(".layoutsub1").textContent = `${element.nombreusuario}`;
     clone.querySelector(".layoutsub2").textContent = `${element.titulo}`;
     fragment.appendChild(clone);
@@ -128,6 +128,7 @@ export{
     pintarSugerencias,
     pintarTituloandButton,
     pintarCardsBusqueda,
+    idLike,
 }
 
 
