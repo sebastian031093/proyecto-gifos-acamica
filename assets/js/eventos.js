@@ -77,50 +77,34 @@ const eventos = () => {
         : await busquedas(userData, paso);
     }
 
-    //Button like style and select gif.
-    
-    
+    //Button like style and select gif
     const gifSelect = event.target.closest(".layout__card--icons-like");
-    const useTag = gifSelect.firstElementChild;
-    //const svg = document.querySelector(".layout__card--icons-like");
-    //console.log(gifSelect)
-    //let svgID = document.querySelector(`[data-link="${svg.dataset.idlike}"]`);
-    //console.log(gifSelect);
-    //console.log(svID);
-    
+
     if (!gifSelect) return;
-    console.log(gifSelect.dataset.target)
-    console.log(gifSelect.firstElementChild);
+    //console.log(gifSelect.dataset.target)
+    
     const idTarget = gifSelect.dataset.target;
     const tabs = document.querySelectorAll("[data-target]");
+    //console.log(tabs);
 
+    const useTag = gifSelect.firstElementChild;
+    //console.log(useTag);
     const idTabUse = gifSelect.firstElementChild.dataset.id; 
-    console.log(idTabUse)
+    //console.log(idTabUse)
     const tabsUse = document.querySelectorAll("[data-id]")
-    console.log(tabs);
+    //console.log(tabsUse)
 
 
     tabs.forEach(tab => {
-      console.log(tab.dataset.target);
+      // console.log(tab.dataset.target);
       idTarget === tab.dataset.target ? gifSelect.classList.toggle("btn__likeActive") :null;
     });
 
     tabsUse.forEach(tab => {
+      //console.log(tab.dataset.id);
       idTabUse === tab.dataset.id ? useTag.setAttribute("href", "assets/img/sprite.svg#icon-heart") : null;
     });
 
-    // console.log(gifSelect.dataset.idtemplate);
-    // let id = gifSelect.dataset.idtemplate;
-    // console.log(gifSelect.dataset.contains(id));
-    // if(){
-    //   console.log('hola le diste like a ');
-    //   // gifSelect.classList.toggle("btn__likeActive");
-    //   // gifSelect.firstElementChild.attributes[1].nodeValue = "assets/img/sprite.svg#icon-heart";
-    // }
-    // let link = document.querySelector("[data-idtemplate=tEcIyVc6ukQV2eb86t]");
-    // console.log(link);
-    // link.classList.toggle("btn__likeActive");
-    // link.firstElementChild.attributes[1].nodeValue = "assets/img/sprite.svg#icon-heart";
   })
 };
 
