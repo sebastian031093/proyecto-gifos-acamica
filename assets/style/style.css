@@ -581,6 +581,10 @@ body {
   background-color: yellowgreen;
 }
 
+.btn-darkmode:checked ~ .main .sectionfooter .sectionfooter__wrap > .iconredes {
+  color: yellowgreen;
+}
+
 .popup {
   height: 100vh;
   width: 100vw;
@@ -860,6 +864,8 @@ body {
 .layout__card--btn {
   border: none;
   background-color: #FFFFFF;
+  height: 3.2rem;
+  width: 3.2rem;
 }
 
 .layout__card--icons {
@@ -880,13 +886,13 @@ body {
 }
 
 .layout__card--icons-like {
-  height: 3.2rem;
-  width: 3.2rem;
+  width: 100%;
+  height: 100%;
 }
 
 .layout__card--icons-download {
-  height: 3.2rem;
-  width: 3.2rem;
+  width: 100%;
+  height: 100%;
 }
 
 .layout__card--titulos {

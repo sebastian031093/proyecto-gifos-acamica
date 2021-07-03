@@ -1,6 +1,12 @@
 //tempaltes de elemento html desde javascript.
 
 import { busquedas } from "../classes/card.class.js";
+let id = 0;
+
+const idLike = () => {
+  id++
+  return id
+}
 
 const pintarCards = (arrcards) => {
     // console.log(arrcards);
@@ -77,6 +83,7 @@ const pintarCardsBusqueda = (arrcards) => {
 
     clone.querySelector(".layout__img").setAttribute("src", element.imagen);
     clone.querySelector(".ancla2").setAttribute("href", `#${element.id}`);
+    clone.querySelector(".layout__card--icons-like").setAttribute("data-id",idLike());
     clone.querySelector(".layoutsub1").textContent = `${element.nombreusuario}`;
     clone.querySelector(".layoutsub2").textContent = `${element.titulo}`;
     fragment.appendChild(clone);

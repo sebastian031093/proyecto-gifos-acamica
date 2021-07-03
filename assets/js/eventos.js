@@ -65,22 +65,7 @@ const eventos = () => {
     }
   });
 
-  //targert en home logica de muchas cosas.
-  home.addEventListener('click', async (event) =>{
-    console.log(event.target);
 
-    //Matching strategy
-    //Boton ver mas....
-    if (event.target.classList.contains("btn-showMeMore")) {
-      console.log("Le diste click al boton fantasma");
-      let paso = offset(); // retorna el ofset.
-      const btnShowMore = document.querySelector(".btn-showMeMore");
-
-      paso >= 84 ? btnShowMore.style.display = 'none' : await busquedas(userData, paso);
-      
-    }
-
-  })
 
 
 };
