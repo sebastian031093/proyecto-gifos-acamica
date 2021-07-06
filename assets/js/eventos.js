@@ -1,9 +1,8 @@
 //Caja de sugerencias.
 
 import { busquedas, sugerenciasDeBusqueda } from "../classes/card.class.js";
-import { eventoLike } from "./button-like.js";
-import {idLike, pintarSugerencias, pintarTituloandButton} from "./layoust.js";
-import { setLocalSorage, getLocalStorage } from "./localStorage.js";
+import { pintarSugerencias, pintarTituloandButton} from "./layoust.js";
+import { setLocalSorage,} from "./localStorage.js";
 
 //elementos a seleccionar.
 
@@ -15,14 +14,20 @@ const offset = () => cont += 12;
 
 
 const eventos = () => {
+  //Variables
   const home = document.querySelector(".home");
+  const sectionMisFavoritos = document.querySelector(".favoritos");
+  const sectionMisGifos = document.querySelector(".misGifos");
+  const nav= document.querySelector('.menu');
   const input = document.querySelector(".searchbox__input");
   const searchbox = document.querySelector(".home__searchbox");
   const searchbox__items = document.querySelector(".searchbox__items");
   const btnsearch = document.querySelector(".btnsearch");
+  const ulderListItemsMenu = document.querySelector(".menu__items");
 
+  // informacion que ingresa el usuario.
   let userData = "";
-
+  //Evento de captura de informacion del buscador
   input.addEventListener("keyup", async (evento) => {
     if (input.value.length > 0) {
       userData = evento.target.value;
@@ -38,14 +43,14 @@ const eventos = () => {
       searchbox.classList.remove("active");
     }
   });
-
+  //Evento de busqueda en l barra de busqueda
   searchbox__items.addEventListener("click", (evento) => {
     //console.log(evento)
     const nombreElamento = evento.target.firstChild.textContent;
     // console.log(nombreElamento);
     userData = input.value = nombreElamento;
   });
-
+  //Array donde se guardaran las busquedas
   let arrbusqueda;
   btnsearch.addEventListener("click", async (evento) => {
     console.log(evento);
@@ -63,6 +68,7 @@ const eventos = () => {
 
   //targert en home logica de muchas cosas.
   home.addEventListener("click", async (event) => {
+    event.preventDefault();
     //console.log(event.target);
 
     //Matching strategy
@@ -89,7 +95,7 @@ const eventos = () => {
 
     const useTag = gifSelect.firstElementChild;
     //console.log(useTag);
-    const idTabUse = gifSelect.firstElementChild.dataset.id; 
+    const idTabUse = gifSelect.firstElementChild.dataset.id;
     //console.log(idTabUse)
     const tabsUse = document.querySelectorAll("[data-id]")
     //console.log(tabsUse)
@@ -104,8 +110,48 @@ const eventos = () => {
       //console.log(tab.dataset.id);
       idTabUse === tab.dataset.id ? useTag.setAttribute("href", "assets/img/sprite.svg#icon-heart") : null;
     });
+  })
+
+  nav.addEventListener('click', (evento) =>{
+    if (evento.target.classList.contains("logo-img")) {
+      //console.log('click en favoritos');
+      home.classList.remove("disable");
+      sectionMisFavoritos.classList.add("disable");
+      sectionMisGifos.classList.add('disable')
+    }
+  })
+
+  ulderListItemsMenu.addEventListener('click', (evento) => {
+    evento.preventDefault();
+    if(evento.target.classList.contains('favoritosList')){
+      //console.log('click en favoritos');
+      sectionMisFavoritos.classList.remove('disable');
+      home.classList.add('disable');
+      sectionMisGifos.classList.add("disable");
+    }
+    
+    if (evento.target.classList.contains("misgifosList")) {
+      sectionMisGifos.classList.remove("disable");
+      home.classList.add("disable");
+      sectionMisFavoritos.classList.add("disable");
+    }
+
 
   })
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 

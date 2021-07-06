@@ -11,9 +11,10 @@
 </head>
 <body class="body">
     <input class="btn-darkmode" type="checkbox" name="my-checkbox">
+
     <nav class="menu" id="menu">
         <div class="menu__logo">
-             <img src="assets/img/logo-mobile.svg" alt="logo-img">
+             <img src="assets/img/logo-mobile.svg" alt="logo-img" class="logo-img">
         </div>
         
         <input class="btn-bugger" type="checkbox" name="my-checkbox" id="burger">
@@ -26,8 +27,8 @@
                 <li class="list-menu listdark" >
                     <a class="menu__items-item darkMode" href="#">Modo Nocturno</a>
                 </li>
-                <li class="list-menu" ><a class="menu__items-item" href="#">Favoritos</a></li>
-                <li class="list-menu" ><a class="menu__items-item" href="#">Mis gifos</a></li>
+                <li class="list-menu"><a class="menu__items-item favoritosList" href="#">Favoritos</a></li>
+                <li class="list-menu"><a class="menu__items-item misgifosList" href="#">Mis gifos</a></li>
                 <button class="btn__creategift">
                     <svg class="btn__creategift--create">
                         <use xlink:href="assets/img/sprite.svg#icon-plus"></use>
@@ -37,7 +38,8 @@
         </div>
     </nav>
 
-    <main class="main">  
+    <main class="main">
+
         <section class="home">
             <div class="home__tiutlo">
                 <div class="home__tiutlo--wrapper">
@@ -93,32 +95,7 @@
                     </h2> -->
                 </div>
                 <div class="layout">
-                    <!-- <div class="layout__card">
-                        <div class="layout__card--containerimg">
-                            <img src="assets/img/auck.jpg" alt="img trendings" class="layout__img">
-                        </div>
-                        <div class="layout__card--icons">
-                            <button class="layout__card--btn">
-                                <svg class="layout__card--icons-like">
-                                    <use xlink:href="assets/img/sprite.svg#icon-heart-outlined"></use>
-                                </svg>
-                            </button>
-                            <button class="layout__card--btn">
-                                <svg class="layout__card--icons-download">
-                                    <use xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
-                                </svg>
-                            </button>
-                            <a href="#popup" class="ancla"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
-                        </div>
-                        <div class="layout__card--titulos">
-                            <h2 class="layoutsub1">
-                                User
-                            </h2>
-                            <h3 class="layoutsub2">
-                                Ticulo del gifo
-                            </h3>
-                        </div>
-                    </div> -->
+                    <!-- AQUI VAN LOS GIFOS BUSCADOS -->
 
                 </div> 
             </div>
@@ -126,6 +103,41 @@
                 <!-- <button class="btn-showMeMore">Ver más</button> -->
             </div>
         </section>
+
+        <section class="favoritos disable">
+            <div class="favoritos__sinContenido">
+                <svg class="favoritos__icon">
+                    <use xlink:href="assets/img/sprite.svg#icon-heart"></use>
+                </svg>
+                <h2 class="favoritos__titulo">Favoritos</h2>
+                <div class="favoritos__img">
+                    <img src="assets/img/icon-fav-sin-contenido.svg" alt="favoritos sin contenido"  class="favoritos__img">
+                </div>
+                <h3 class="favoritos__texto">"¡Guarda tu primer GIFO en Favoritos</h3>
+                <h3 class="favoritos__texto">para que se muestre aquí!"</h3>
+            </div>
+            <div class="contenido">
+
+            </div>
+        </section>
+
+        <section class="misGifos disable">
+            <div class="misGifos__sinContenido active">
+                <div class="misGifos__img--icon">
+                    <img src="assets/img/icon-mis-gifos-sin-contenido.svg" alt="mis figos sin contenido"  class="misGifos__img--icon-iconsmall">
+                </div>
+                <h2 class="misGifos__titulo">Mis GIFOS</h2>
+                <div class="misGifos__img">
+                    <img src="assets/img/icon-mis-gifos-sin-contenido.svg" alt="mis figos sin contenido"  class="misGifos__img">
+                </div>
+                <h3 class="misGifos__texto">¡Anímate a crear tu primer GIFO!</h3>
+            </div>
+            <div class="contenido">
+
+            </div>
+        </section>
+
+        
 
         <!-- TREANDINGS -->
         <section class="trendings">

@@ -26,8 +26,7 @@ const cardstreandigs = async () =>{
     // return arrcards;
     pintarCards(arrcards);
     pintarpopups(arrcards);
-    
-      
+    return arrcards;
 }
 
 const sugerenciasDeBusqueda = async (value) =>{

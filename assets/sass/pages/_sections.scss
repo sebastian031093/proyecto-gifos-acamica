@@ -3,6 +3,7 @@
 .menu{
     width: 100vw;
     height: 9.5rem;
+    border-bottom: solid 1px $color-primario;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -16,6 +17,81 @@
     flex-direction: column;
     padding-top: 9.5rem;
     align-items: center;
+}
+
+.favoritos{
+    margin-top: 11.6rem;
+    
+
+    &__sinContenido{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__icon{
+        fill: $color-secundario;
+        height: 8rem;
+    }
+
+    &__titulo{
+        color: $color-primario;
+        margin-bottom: 10rem;
+    }
+
+    &__img{
+        margin-bottom: 2.4rem;
+    }
+
+    &__texto{
+        color: $color-secundario;
+    }
+
+    // REMOVER AL HACER CLICK
+    // opacity: 0;
+    // visibility: 0;
+    // display: none;
+
+
+}
+
+.misGifos{
+    margin-top: 11.6rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    &__img--icon{
+        
+        &-iconsmall{
+            width: 5rem;
+        }
+    }
+
+    &__titulo{
+        color: $color-primario;
+        margin-bottom: 10rem;
+    }
+
+    &__img{
+        margin-bottom: 2.4rem;
+    }
+
+    &__texto{
+        color: $color-secundario;
+    }
+
+    // REMOVER AL HACER CLICK
+    // opacity: 0;
+    // visibility: 0;
+    // display: none;
+}
+
+.disable{
+    opacity: 0;
+    visibility: 0;
+    display: none;
 }
 
 

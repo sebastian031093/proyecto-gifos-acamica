@@ -940,6 +940,7 @@ body {
 .menu {
   width: 100vw;
   height: 9.5rem;
+  border-bottom: solid 1px #572EE5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -969,5 +970,76 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.favoritos {
+  margin-top: 11.6rem;
+}
+
+.favoritos__sinContenido {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.favoritos__icon {
+  fill: #50E3C2;
+  height: 8rem;
+}
+
+.favoritos__titulo {
+  color: #572EE5;
+  margin-bottom: 10rem;
+}
+
+.favoritos__img {
+  margin-bottom: 2.4rem;
+}
+
+.favoritos__texto {
+  color: #50E3C2;
+}
+
+.misGifos {
+  margin-top: 11.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.misGifos__img--icon-iconsmall {
+  width: 5rem;
+}
+
+.misGifos__titulo {
+  color: #572EE5;
+  margin-bottom: 10rem;
+}
+
+.misGifos__img {
+  margin-bottom: 2.4rem;
+}
+
+.misGifos__texto {
+  color: #50E3C2;
+}
+
+.disable {
+  opacity: 0;
+  visibility: 0;
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
