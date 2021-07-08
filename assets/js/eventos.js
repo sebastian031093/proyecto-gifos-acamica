@@ -11,6 +11,8 @@ import { setLocalSorage,} from "./localStorage.js";
 let cont = 12;
 
 const offset = () => cont += 12;
+export let arrayTotal = [];
+let arrayLikes = [];
 
 
 const eventos = () => {
@@ -59,8 +61,8 @@ const eventos = () => {
       layoutBusquedas.innerHTML = "";
       await pintarTituloandButton(userData);
       arrbusqueda = await busquedas(userData);
-      
       setLocalSorage(arrbusqueda);
+      arrayTotal.push(arrbusqueda);
     } else {
       console.log("sorry not");
     }
@@ -68,7 +70,7 @@ const eventos = () => {
 
   //targert en home logica de muchas cosas.
   home.addEventListener("click", async (event) => {
-    event.preventDefault();
+    
     //console.log(event.target);
 
     //Matching strategy
@@ -77,10 +79,11 @@ const eventos = () => {
       console.log("Le diste click al boton fantasma");
       let paso = offset(); // retorna el ofset.
       const btnShowMore = document.querySelector(".btn-showMeMore");
-
       paso >= 84
         ? (btnShowMore.style.display = "none")
-        : await busquedas(userData, paso);
+        : arrayTotal.push(await busquedas(userData, paso));
+
+      //arrayTotal.push(await busquedas(userData, paso));
     }
 
     //Button like style and select gif
@@ -91,7 +94,7 @@ const eventos = () => {
     
     const idTarget = gifSelect.dataset.target;
     const tabs = document.querySelectorAll("[data-target]");
-    //console.log(tabs);
+    console.log(tabs);
 
     const useTag = gifSelect.firstElementChild;
     //console.log(useTag);
@@ -110,51 +113,72 @@ const eventos = () => {
       //console.log(tab.dataset.id);
       idTabUse === tab.dataset.id ? useTag.setAttribute("href", "assets/img/sprite.svg#icon-heart") : null;
     });
+
+
+    console.log(arrayTotal);
+    console.log(arrayTotal.flat());
+
+    const giphy = arrayTotal.flat().find( gifo => gifo.id === gifSelect.dataset.target)
+    console.log(giphy);
+
+    if(gifSelect.classList.contains('btn__likeActive')){
+      arrayLikes.push(giphy);
+      console.log(arrayLikes);
+    }
+
   })
 
-  nav.addEventListener('click', (evento) =>{
+
+  nav.addEventListener("click", (evento) => {
     if (evento.target.classList.contains("logo-img")) {
       //console.log('click en favoritos');
       home.classList.remove("disable");
       sectionMisFavoritos.classList.add("disable");
-      sectionMisGifos.classList.add('disable')
-    }
-  })
-
-  ulderListItemsMenu.addEventListener('click', (evento) => {
-    evento.preventDefault();
-    if(evento.target.classList.contains('favoritosList')){
-      //console.log('click en favoritos');
-      sectionMisFavoritos.classList.remove('disable');
-      home.classList.add('disable');
       sectionMisGifos.classList.add("disable");
     }
-    
+  });
+
+  ulderListItemsMenu.addEventListener("click", (evento) => {
+    if (evento.target.classList.contains("favoritosList")) {
+      //console.log('click en favoritos');
+      sectionMisFavoritos.classList.remove("disable");
+      home.classList.add("disable");
+      sectionMisGifos.classList.add("disable");
+
+      if (arrayLikes.length < 1) {
+        const html = `
+          <div class="favoritos__sinContenido">
+              <svg class="favoritos__icon">
+                  <use xlink:href="assets/img/sprite.svg#icon-heart"></use>
+              </svg>
+              <h2 class="favoritos__titulo">Favoritos</h2>
+              <div class="favoritos__img">
+                  <img src="assets/img/icon-fav-sin-contenido.svg" alt="favoritos sin contenido" class="favoritos__img">
+              </div>
+              <h3 class="favoritos__texto">"¡Guarda tu primer GIFO en Favoritos</h3>
+              <h3 class="favoritos__texto">para que se muestre aquí!"</h3>
+          </div>
+        `;
+        sectionMisFavoritos.innerHTML = html;
+      } else {
+        const html = `
+          <div class="contenidoFavoritos">
+              
+          </div>
+        `;
+        sectionMisFavoritos.innerHTML = html;
+      }
+    }
+
     if (evento.target.classList.contains("misgifosList")) {
       sectionMisGifos.classList.remove("disable");
       home.classList.add("disable");
       sectionMisFavoritos.classList.add("disable");
     }
-
-
-  })
+  });
 
   
-
-
-
-
-
-
-
-
-
-
-
-
 };
 
 
-export const init = () => {
-  eventos();
-};
+export  const init = () => eventos();

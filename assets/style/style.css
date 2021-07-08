@@ -842,6 +842,20 @@ body {
           align-items: center;
 }
 
+.contenidoFavoritos {
+  width: 100%;
+  margin-top: 11.6rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(22rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  grid-gap: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 2.5rem 0 2.5rem;
+}
+
 .layout {
   width: 100%;
   display: -ms-grid;

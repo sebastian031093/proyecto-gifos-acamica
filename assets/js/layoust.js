@@ -1,6 +1,5 @@
 //tempaltes de elemento html desde javascript.
 
-import { busquedas } from "../classes/card.class.js";
 let id = 0;
 
 const idLike = () => {

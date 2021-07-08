@@ -1,0 +1,11 @@
+.contenidoFavoritos{
+    width: 100%;
+    margin-top: 11.6rem;
+    //background-color: greenyellow;
+    //Estilos de la card de la parte de busqueda.
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    grid-gap: 2rem;
+    justify-content: center;
+    padding: 0 2.5rem 0 2.5rem;
+}
