@@ -1,7 +1,7 @@
 //Caja de sugerencias.
 
 import { busquedas, sugerenciasDeBusqueda } from "../classes/card.class.js";
-import { pintarSugerencias, pintarTituloandButton} from "./layoust.js";
+import { pintarFavoitos, pintarSugerencias, pintarTituloandButton} from "./layoust.js";
 import { setLocalSorage,} from "./localStorage.js";
 
 //elementos a seleccionar.
@@ -13,7 +13,7 @@ let cont = 12;
 const offset = () => cont += 12;
 export let arrayTotal = [];
 let arrayLikes = [];
-
+let index;
 
 const eventos = () => {
   //Variables
@@ -26,6 +26,7 @@ const eventos = () => {
   const searchbox__items = document.querySelector(".searchbox__items");
   const btnsearch = document.querySelector(".btnsearch");
   const ulderListItemsMenu = document.querySelector(".menu__items");
+
 
   // informacion que ingresa el usuario.
   let userData = "";
@@ -93,6 +94,7 @@ const eventos = () => {
     //console.log(gifSelect.dataset.target)
     
     const idTarget = gifSelect.dataset.target;
+    console.log(idTarget);
     const tabs = document.querySelectorAll("[data-target]");
     console.log(tabs);
 
@@ -103,29 +105,31 @@ const eventos = () => {
     const tabsUse = document.querySelectorAll("[data-id]")
     //console.log(tabsUse)
 
+    console.log(arrayTotal);
+    console.log(arrayTotal.flat());
+
+    const giphy = arrayTotal
+      .flat()
+      .find((gifo) => gifo.id === gifSelect.dataset.target);
+    console.log(giphy);
+
 
     tabs.forEach(tab => {
-      // console.log(tab.dataset.target);
       idTarget === tab.dataset.target ? gifSelect.classList.toggle("btn__likeActive") :null;
     });
 
     tabsUse.forEach(tab => {
       //console.log(tab.dataset.id);
+      //TODO:Cambia el icono para el dislike
       idTabUse === tab.dataset.id ? useTag.setAttribute("href", "assets/img/sprite.svg#icon-heart") : null;
+       
     });
 
-
-    console.log(arrayTotal);
-    console.log(arrayTotal.flat());
-
-    const giphy = arrayTotal.flat().find( gifo => gifo.id === gifSelect.dataset.target)
-    console.log(giphy);
-
-    if(gifSelect.classList.contains('btn__likeActive')){
-      arrayLikes.push(giphy);
-      console.log(arrayLikes);
-    }
-
+    gifSelect.classList.contains('btn__likeActive') ? arrayLikes.push(giphy) : arrayLikes.splice(index, 1);
+    index = arrayLikes.findIndex( current => current.id === idTarget);
+    console.log(arrayLikes);
+    console.log(pintarFavoitos(arrayLikes));
+  
   })
 
 
@@ -145,8 +149,8 @@ const eventos = () => {
       home.classList.add("disable");
       sectionMisGifos.classList.add("disable");
 
-      if (arrayLikes.length < 1) {
-        const html = `
+       if (arrayLikes.length < 1) {
+         const html = `
           <div class="favoritos__sinContenido">
               <svg class="favoritos__icon">
                   <use xlink:href="assets/img/sprite.svg#icon-heart"></use>
@@ -159,15 +163,15 @@ const eventos = () => {
               <h3 class="favoritos__texto">para que se muestre aquí!"</h3>
           </div>
         `;
-        sectionMisFavoritos.innerHTML = html;
-      } else {
-        const html = `
+         sectionMisFavoritos.innerHTML = html;
+       } else {
+         const html = `
           <div class="contenidoFavoritos">
-              
+            
           </div>
         `;
-        sectionMisFavoritos.innerHTML = html;
-      }
+         sectionMisFavoritos.innerHTML = html;
+       }
     }
 
     if (evento.target.classList.contains("misgifosList")) {

@@ -67,9 +67,6 @@ const pintarSugerencias = (arrSuggest) => {
 
 
 //pintar busquedas de la basrra de busquedas.
-
-
-
 const pintarCardsBusqueda = (arrcards) => {
 
   const layoutBusquedas = document.querySelector(".layout");
@@ -92,10 +89,27 @@ const pintarCardsBusqueda = (arrcards) => {
 
 };
 
+//Pintar favoritos
+const pintarFavoitos = (arrcards) => {
+  const layoutFavoritos = document.querySelector(".contenidoFavoritos");
+
+  arrcards.forEach((element) => {
+    const tempalteFavorito = document.querySelector("#templateFavoritos").content;
+    const clone = tempalteFavorito.cloneNode(true);
+    const fragment = document.createDocumentFragment();
+
+    clone.querySelector(".layout__img").setAttribute("src", element.imagen);
+    clone.querySelector(".ancla2").setAttribute("href", `#${element.id}`);
+    clone.querySelector(".layout__card--icons-like").setAttribute("data-target", `${element.id}`);
+    clone.querySelector(".bnt-like").setAttribute("data-id", idLike());
+    clone.querySelector(".layoutsub1").textContent = `${element.nombreusuario}`;
+    clone.querySelector(".layoutsub2").textContent = `${element.titulo}`;
+    fragment.appendChild(clone);
+    layoutFavoritos.appendChild(fragment);
+  });
+};
 
 
-
-const divpadre = document.querySelector(".home__cajaDeBusqeudas");
 
 const pintarTituloandButton = async (valueinput) => {
   const containerText = document.querySelector(".containerText");
@@ -128,6 +142,7 @@ export{
     pintarTituloandButton,
     pintarCardsBusqueda,
     idLike,
+    pintarFavoitos
 }
 
 
