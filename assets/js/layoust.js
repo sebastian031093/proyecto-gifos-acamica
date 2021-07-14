@@ -1,11 +1,6 @@
 //tempaltes de elemento html desde javascript.
 
-let id = 0;
 
-const idLike = () => {
-  id++
-  return id + ''
-}
 
 const pintarCards = (arrcards) => {
     // console.log(arrcards);
@@ -79,7 +74,7 @@ const pintarCardsBusqueda = (arrcards) => {
     clone.querySelector(".layout__img").setAttribute("src", element.imagen);
     clone.querySelector(".ancla2").setAttribute("href", `#${element.id}`);
     clone.querySelector(".layout__card--icons-like").setAttribute("data-target", `${element.id}`);
-    clone.querySelector(".bnt-like").setAttribute("data-id", idLike())
+    clone.querySelector(".bnt-like").setAttribute("data-id", `${element.idlike}`);
     clone.querySelector(".layoutsub1").textContent = `${element.nombreusuario}`;
     clone.querySelector(".layoutsub2").textContent = `${element.titulo}`;
     fragment.appendChild(clone);
@@ -89,25 +84,6 @@ const pintarCardsBusqueda = (arrcards) => {
 
 };
 
-//Pintar favoritos
-const pintarFavoitos = (arrcards) => {
-  const layoutFavoritos = document.querySelector(".contenidoFavoritos");
-
-  arrcards.forEach((element) => {
-    const tempalteFavorito = document.querySelector("#templateFavoritos").content;
-    const clone = tempalteFavorito.cloneNode(true);
-    const fragment = document.createDocumentFragment();
-
-    clone.querySelector(".layout__img").setAttribute("src", element.imagen);
-    clone.querySelector(".ancla2").setAttribute("href", `#${element.id}`);
-    clone.querySelector(".layout__card--icons-like").setAttribute("data-target", `${element.id}`);
-    clone.querySelector(".bnt-like").setAttribute("data-id", idLike());
-    clone.querySelector(".layoutsub1").textContent = `${element.nombreusuario}`;
-    clone.querySelector(".layoutsub2").textContent = `${element.titulo}`;
-    fragment.appendChild(clone);
-    layoutFavoritos.appendChild(fragment);
-  });
-};
 
 
 
@@ -141,8 +117,6 @@ export{
     pintarSugerencias,
     pintarTituloandButton,
     pintarCardsBusqueda,
-    idLike,
-    pintarFavoitos
 }
 
 

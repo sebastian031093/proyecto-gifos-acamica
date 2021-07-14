@@ -1,7 +1,7 @@
 //Caja de sugerencias.
 
 import { busquedas, sugerenciasDeBusqueda } from "../classes/card.class.js";
-import { pintarFavoitos, pintarSugerencias, pintarTituloandButton} from "./layoust.js";
+import {pintarSugerencias, pintarTituloandButton} from "./layoust.js";
 import { setLocalSorage,} from "./localStorage.js";
 
 //elementos a seleccionar.
@@ -17,7 +17,8 @@ let index;
 
 const eventos = () => {
   //Variables
-  const home = document.querySelector(".home");
+  const main = document.querySelector(".main");
+  const home = document.querySelector('.home');
   const sectionMisFavoritos = document.querySelector(".favoritos");
   const sectionMisGifos = document.querySelector(".misGifos");
   const nav= document.querySelector('.menu');
@@ -62,7 +63,7 @@ const eventos = () => {
       layoutBusquedas.innerHTML = "";
       await pintarTituloandButton(userData);
       arrbusqueda = await busquedas(userData);
-      setLocalSorage(arrbusqueda);
+      //setLocalSorage(arrbusqueda);
       arrayTotal.push(arrbusqueda);
     } else {
       console.log("sorry not");
@@ -70,9 +71,9 @@ const eventos = () => {
   });
 
   //targert en home logica de muchas cosas.
-  home.addEventListener("click", async (event) => {
+  main.addEventListener("click", async (event) => {
     
-    //console.log(event.target);
+    console.log(event.target);
 
     //Matching strategy
     //Boton ver mas....
@@ -128,9 +129,8 @@ const eventos = () => {
     gifSelect.classList.contains('btn__likeActive') ? arrayLikes.push(giphy) : arrayLikes.splice(index, 1);
     index = arrayLikes.findIndex( current => current.id === idTarget);
     console.log(arrayLikes);
-    console.log(pintarFavoitos(arrayLikes));
   
-  })
+  });
 
 
   nav.addEventListener("click", (evento) => {
@@ -142,6 +142,7 @@ const eventos = () => {
     }
   });
 
+  const favoritosContainer = document.querySelector(".favoritos");
   ulderListItemsMenu.addEventListener("click", (evento) => {
     if (evento.target.classList.contains("favoritosList")) {
       //console.log('click en favoritos');
@@ -150,27 +151,56 @@ const eventos = () => {
       sectionMisGifos.classList.add("disable");
 
        if (arrayLikes.length < 1) {
-         const html = `
-          <div class="favoritos__sinContenido">
-              <svg class="favoritos__icon">
-                  <use xlink:href="assets/img/sprite.svg#icon-heart"></use>
-              </svg>
-              <h2 class="favoritos__titulo">Favoritos</h2>
-              <div class="favoritos__img">
-                  <img src="assets/img/icon-fav-sin-contenido.svg" alt="favoritos sin contenido" class="favoritos__img">
-              </div>
-              <h3 class="favoritos__texto">"¡Guarda tu primer GIFO en Favoritos</h3>
-              <h3 class="favoritos__texto">para que se muestre aquí!"</h3>
-          </div>
-        `;
-         sectionMisFavoritos.innerHTML = html;
+        const html = `
+            <div class="favoritos__sinContenido">
+                <svg class="favoritos__icon">
+                    <use xlink:href="assets/img/sprite.svg#icon-heart"></use>
+                </svg>
+                <h2 class="favoritos__titulo">Favoritos</h2>
+                <div class="favoritos__img">
+                    <img src="assets/img/icon-fav-sin-contenido.svg" alt="favoritos sin contenido"  class="favoritos__img">
+                </div>
+                <h3 class="favoritos__texto">"¡Guarda tu primer GIFO en Favoritos</h3>
+                <h3 class="favoritos__texto">para que se muestre aquí!"</h3>
+            </div>
+          `;
+        sectionMisFavoritos.innerHTML = '';
+        favoritosContainer.insertAdjacentHTML('afterbegin', html);
        } else {
          const html = `
           <div class="contenidoFavoritos">
-            
+            ${arrayLikes.map( gifo => {
+              return `
+              <div class="layout__card">
+                <img src="${gifo.imagen}" alt="${gifo.titulo}" class="layout__img">
+                <div class="layout__card--icons">
+                    <button class="layout__card--btn">
+                        <svg class="layout__card--icons-like btn__likeActive" data-target="${gifo.imagen}">
+                            <use class="bnt-like" data-id="${gifo.idlike}" href="assets/img/sprite.svg#icon-heart"></use>
+                        </svg>
+                    </button>
+                    <button class="layout__card--btn">
+                        <svg class="layout__card--icons-download">
+                            <use class="bnt-download" xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>
+                        </svg>
+                    </button>
+                    <a href="#${gifo.id}" class="ancla2"><img src="assets/img/icon-max-normal.svg" alt="icon-max"></a>
+                </div>
+                <div class="layout__card--titulos">
+                    <h2 class="layoutsub1">
+                        ${gifo.titulo}
+                    </h2>
+                    <h3 class="layoutsub2">
+                        ${gifo.nombreusuario}
+                    </h3>
+                </div>
+              </div>
+              `;
+            }).join('')}
           </div>
         `;
-         sectionMisFavoritos.innerHTML = html;
+         sectionMisFavoritos.innerHTML = '';
+         favoritosContainer.insertAdjacentHTML('afterbegin', html)
        }
     }
 
@@ -180,8 +210,6 @@ const eventos = () => {
       sectionMisFavoritos.classList.add("disable");
     }
   });
-
-  
 };
 
 

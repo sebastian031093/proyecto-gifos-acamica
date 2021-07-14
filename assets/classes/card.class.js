@@ -2,7 +2,12 @@
 import { fecthData,fecthDataSubggest } from "../js/http-providers.js"
 import { pintarCards,pintarCardsBusqueda,pintarpopups } from "../js/layoust.js";
 
+let id = 0;
 
+const idLike = () => {
+  id++;
+  return id + "";
+};
 
 
 const cardstreandigs = async () =>{
@@ -57,6 +62,7 @@ const busquedas = async (value,paso) => {
       titulo: element.title,
       nombreusuario: element.username,
       imagen: element.images.original.url,
+      idlike: idLike(),
     };
     
     arrcards.push(card);
