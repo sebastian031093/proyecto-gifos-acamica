@@ -13,17 +13,9 @@ html {
     font-size: 112.5%;  // 1rem = 17px, 17/16 = 112.5%
   }
 
-  @include respond(tab-land){
-    font-size: 125%; //1rem = 20px, 20/16 = 125%
-  }
-
-  @include respond(desktop){
-    font-size: 156.25%; //1rem = 25px, 25/16 = 156.25%
-  }
-
-
-
 }
+
+
 *,
 *:before, 
 *:after {

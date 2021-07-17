@@ -65,7 +65,7 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="searchbox__backgroud">&nbsp;</div>
+                    <!-- <div class="searchbox__backgroud">&nbsp;</div> -->
                     <ul class="searchbox__items">
                         <li class="searchbox__item"> <i class="fas fa-search"></i>sugerencia #1</i></li>
                         <li class="searchbox__item"> <i class="fas fa-search"></i>sugerencia #1</i></li>
@@ -75,7 +75,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="home__subtreadings">
                 <h2 class="subtitulosfuerte">Trending:</h2>
                 <h3 class="subtitulos">
@@ -231,14 +231,13 @@
     </main>
 
     <!-- template para trendings -->
-
     <template id="template-card">
         <div class="trendings__scrolling--wrapper-card">
             <img src="https://picsum.photos/200/300" alt="img trendings" class="trendings__scrolling--wrapper-img">
             <div class="trendings__scrolling--wrapper-icons">
                 <button class="layout__card--btn">
-                    <svg class="layout__card--icons-like">
-                        <use href="assets/img/sprite.svg#icon-heart" ></use>
+                    <svg class="layout__card--icons-like" data-target="1234">
+                        <use class="bnt-like" data-id="123" href="assets/img/sprite.svg#icon-heart-outlined" ></use>
                     </svg>
                 </button>
                 <button class="layout__card--btn">
@@ -292,16 +291,13 @@
     <!-- template para busquedas del navegador de gifos -->
     <template id="templateBusquedas">
         <div class="layout__card">
-            
             <img src="https://picsum.photos/200/300" alt="img trendings" class="layout__img">
             <div class="layout__card--icons">
-                
                 <button class="layout__card--btn">
                     <svg class="layout__card--icons-like" data-target="1234">
                         <use class="bnt-like" data-id="123" href="assets/img/sprite.svg#icon-heart-outlined"></use>
                     </svg>
                 </button>
-                
                 <button class="layout__card--btn">
                     <svg class="layout__card--icons-download">
                         <use class="bnt-download" xlink:href="assets/img/sprite.svg#icon-cloud-download"></use>

@@ -18,6 +18,8 @@ const pintarCards = (arrcards) => {
         const fragment = document.createDocumentFragment(); //sumamente efectivo para crear loops, evita el reflow(RENDERISADOS INECESARIOS)
         clone.querySelector(".trendings__scrolling--wrapper-img").setAttribute("src", element.imagen);
         clone.querySelector(".ancla").setAttribute("href",`#${element.id}`);
+        clone.querySelector(".layout__card--icons-like").setAttribute("data-target", `${element.id}`);
+        clone.querySelector(".bnt-like").setAttribute("data-id", `${element.idlike}`);
         clone.querySelector(".sub1").textContent = `${element.nombreusuario}`;
         clone.querySelector(".sub2").textContent = `${element.titulo}`;
         fragment.appendChild(clone);

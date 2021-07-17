@@ -9,6 +9,7 @@
         width: 85%;
         transition: all .2s;
         margin-right: -5.25rem;
+        
 
         &:focus{
             font-weight: 700;
@@ -19,25 +20,20 @@
 
     }
 
-    &__backgroud{
-
-    }
-
     &__items{
         list-style: none;
-        max-height: 12rem;
+        max-height: 100%;
         overflow-y: auto;
         opacity: 0;
         pointer-events: none;
+        margin: 0px 6% 0 10%;
     }
 
 
     &__item{
-        padding: 2% 0 0 10%;
-        width: 100%;
-        cursor: default;
-        border-radius: .3rem;
-        display: none;
+        display: flex;
+        align-items: center;
+        padding: 14px;
     }
 
     &__item:hover{
@@ -85,17 +81,28 @@
     }
 }
 
+.btnsearch-icon-masck{
+    height: 1.58rem;
+    width: 1.58rem;
+    margin-right: 10px;
+    fill: #9CAFC3;
+}
+
 
 
 //CARD search 
 .home__searchbox.active .searchbox__items{
     opacity: 1;
     pointer-events: auto;
+    transition: all .2s ease
 }
 
 
 .home__searchbox.active .searchbox__item{
-    display: block;
+    display: flex;
+    color: #9CAFC3;
+    font-size: 1.6rem;
+    text-transform: capitalize;
 }
 
 

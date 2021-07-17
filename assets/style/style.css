@@ -55,18 +55,6 @@ html {
   }
 }
 
-@media (min-width: 67.5rem) {
-  html {
-    font-size: 125%;
-  }
-}
-
-@media (min-width: 75em) {
-  html {
-    font-size: 156.25%;
-  }
-}
-
 *,
 *:before,
 *:after {
@@ -695,18 +683,21 @@ body {
 
 .searchbox__items {
   list-style: none;
-  max-height: 12rem;
+  max-height: 100%;
   overflow-y: auto;
   opacity: 0;
   pointer-events: none;
+  margin: 0px 6% 0 10%;
 }
 
 .searchbox__item {
-  padding: 2% 0 0 10%;
-  width: 100%;
-  cursor: default;
-  border-radius: .3rem;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 14px;
 }
 
 .searchbox__item:hover {
@@ -748,13 +739,27 @@ body {
   width: 2.0rem;
 }
 
+.btnsearch-icon-masck {
+  height: 1.58rem;
+  width: 1.58rem;
+  margin-right: 10px;
+  fill: #9CAFC3;
+}
+
 .home__searchbox.active .searchbox__items {
   opacity: 1;
   pointer-events: auto;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .home__searchbox.active .searchbox__item {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #9CAFC3;
+  font-size: 1.6rem;
+  text-transform: capitalize;
 }
 
 .trendings {
@@ -854,6 +859,20 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0 2.5rem 0 2.5rem;
+}
+
+.markuolike {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
 .layout {
@@ -1004,6 +1023,20 @@ body {
   text-align: center;
 }
 
+.favoritos__Contenido {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
 .favoritos__icon {
   fill: #50E3C2;
   height: 8rem;
@@ -1012,6 +1045,10 @@ body {
 .favoritos__titulo {
   color: #572EE5;
   margin-bottom: 10rem;
+}
+
+.favoritos__tituloContenido {
+  color: #572EE5;
 }
 
 .favoritos__img {

@@ -30,6 +30,13 @@
         text-align: center;
     }
 
+    &__Contenido{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
     &__icon{
         fill: $color-secundario;
         height: 8rem;
@@ -38,6 +45,10 @@
     &__titulo{
         color: $color-primario;
         margin-bottom: 10rem;
+    }
+
+    &__tituloContenido{
+        color: $color-primario;
     }
 
     &__img{

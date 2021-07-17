@@ -39,7 +39,7 @@ const eventos = () => {
       let arrSuggets = await sugerenciasDeBusqueda(userData);
       // console.log(arrSuggets);
       arrSuggets = arrSuggets.map((data) => {
-        return (data = ` <li class="searchbox__item">${data.sugget}</li>`);
+        return (data = `<li class="searchbox__item"><svg class="btnsearch-icon-masck"><use xlink:href="assets/img/sprite2.svg#icon-magnifying-glass"></use></svg>${data.sugget}</li>`);
       });
       pintarSugerencias(arrSuggets);
       searchbox.classList.add("active");
@@ -51,7 +51,7 @@ const eventos = () => {
   searchbox__items.addEventListener("click", (evento) => {
     //console.log(evento)
     const nombreElamento = evento.target.firstChild.textContent;
-    // console.log(nombreElamento);
+    console.log(nombreElamento);
     userData = input.value = nombreElamento;
   });
   //Array donde se guardaran las busquedas
@@ -92,7 +92,7 @@ const eventos = () => {
     const gifSelect = event.target.closest(".layout__card--icons-like");
 
     if (!gifSelect) return;
-    //console.log(gifSelect.dataset.target)
+    console.log(gifSelect.dataset.target)
     
     const idTarget = gifSelect.dataset.target;
     console.log(idTarget);
@@ -167,15 +167,25 @@ const eventos = () => {
         sectionMisFavoritos.innerHTML = '';
         favoritosContainer.insertAdjacentHTML('afterbegin', html);
        } else {
+         const markup = `
+          <div class="favoritos__Contenido">
+            <svg class="favoritos__icon">
+              <use xlink:href="assets/img/sprite.svg#icon-heart"></use>
+            </svg>
+            <h2 class="favoritos__tituloContenido">Favoritos</h2>
+          </div>
+         `;
+
          const html = `
           <div class="contenidoFavoritos">
-            ${arrayLikes.map( gifo => {
-              return `
+            ${arrayLikes
+              .map((gifo) => {
+                return `
               <div class="layout__card">
                 <img src="${gifo.imagen}" alt="${gifo.titulo}" class="layout__img">
                 <div class="layout__card--icons">
                     <button class="layout__card--btn">
-                        <svg class="layout__card--icons-like btn__likeActive" data-target="${gifo.imagen}">
+                        <svg class="layout__card--icons-like btn__likeActive" data-target="${gifo.id}">
                             <use class="bnt-like" data-id="${gifo.idlike}" href="assets/img/sprite.svg#icon-heart"></use>
                         </svg>
                     </button>
@@ -196,11 +206,13 @@ const eventos = () => {
                 </div>
               </div>
               `;
-            }).join('')}
+              })
+              .join("")}
           </div>
         `;
          sectionMisFavoritos.innerHTML = '';
-         favoritosContainer.insertAdjacentHTML('afterbegin', html)
+         favoritosContainer.insertAdjacentHTML('afterbegin', html);
+         favoritosContainer.insertAdjacentHTML('afterbegin',markup);
        }
     }
 

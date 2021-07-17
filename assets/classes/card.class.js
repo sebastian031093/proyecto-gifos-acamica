@@ -23,6 +23,7 @@ const cardstreandigs = async () =>{
           titulo: element.title,
           nombreusuario: element.username,
           imagen: element.images.original.url,
+          idlike: idLike(),
         };
 
         arrcards.push(card)
